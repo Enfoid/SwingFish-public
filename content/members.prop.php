@@ -29,7 +29,7 @@ with no genuine interest in being a active, supportive and respected member, we 
 		  </div>
 <?
 }
-elseif (!checkDiscordPermission($_SESSION['discord']['id'], 'rookie')) {
+elseif ((!checkDiscordPermission($_SESSION['discord']['id'], 'rookie'))&&(!checkDiscordPermission($_SESSION['discord']['id'], 'ball'))) {
 	echo "### Rookie";
 }
 	else {
