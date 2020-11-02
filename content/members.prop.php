@@ -38,7 +38,7 @@ elseif ((checkDiscordPermission($_SESSION['discord']['id'], 'rookie'))&&(checkDi
 	<li> <strong>Well Trained</strong> in Money Management</li>
 	<li> have successfully traded <strong>Your Own live funds</strong> profitable over a period of time.</li>
 	<li> <strong>Respectful</strong> over funds that are not yours.</li>
-	<li> <strong>Respect what EnFoid does and SwingFish is trying to accomplish</strong> </li>
+	<li> <strong>Respect what EnFoid does and SwingFish is trying to accomplish here.</strong> </li>
 </ul>
 
 			<p align="right"><a href="https://www.enfoid.com/prop/qform/fasttrack" target="_blank" class="btn btn-default btn-icon-right waves-effect waves-light">Too much ? no problem, with Fast-track you can get enrolled Today!</a> &nbsp; <a href="https://www.discord.com/invite/swingfish" target="_blank" class="btn btn-secondary btn-icon-right waves-effect waves-light">Back to Discord<i class="icon-arrow-right"></i></a></p>
