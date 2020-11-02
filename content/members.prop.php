@@ -30,7 +30,20 @@ with no genuine interest in being a active, supportive and respected member, we 
 <?
 }
 elseif ((checkDiscordPermission($_SESSION['discord']['id'], 'rookie'))&&(checkDiscordPermission($_SESSION['discord']['id'], 'ball'))) {
-	echo "### Rookie";
+?>
+	<div class="col-sm-12" style="width:100%;padding-top:10px;border: 2px solid #1bdb68; margin: 0 auto 30px auto;">
+			  <h3 class="pricing-title">Experienced Traders Only !</h3>
+			  <p>EnFoid does not provide Educational services. 
+<ul>we expect you to be
+	<li> <strong>Well Trained</strong> in Money Management</li>
+	<li> have successfully traded <strong>Your Own live funds</strong> profitable over a period of time.</li>
+	<li> <strong>Respectful</strong> over funds that are not yours.</li>
+	<li> <strong>Respect what EnFoid does and SwingFish is trying to accomplish</strong> </li>
+</ul>
+
+			<p align="right"><a href="https://www.enfoid.com/prop/qform/fasttrack" target="_blank" class="btn btn-default btn-icon-right waves-effect waves-light">Too much ? no problem, with Fast-track you can get enrolled Today!</a> &nbsp; <a href="https://www.discord.com/invite/swingfish" target="_blank" class="btn btn-secondary btn-icon-right waves-effect waves-light">Back to Discord<i class="icon-arrow-right"></i></a></p>
+		  </div>
+<?
 }
 	else {
 ?>
