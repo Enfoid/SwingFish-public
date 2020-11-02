@@ -29,6 +29,9 @@ with no genuine interest in being a active, supportive and respected member, we 
 		  </div>
 <?
 }
+elseif (!checkDiscordPermission($_SESSION['discord']['id'], 'rookie')) {
+	echo "### Rookie";
+}
 	else {
 ?>
 <img src="https://www.enfoid.com/assets/images/enfoidprop3.png?1" align="right" width="145px" alt="EnFoid Prop Logo">
