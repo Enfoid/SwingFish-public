@@ -50,13 +50,6 @@
         </div><!-- .grid-item.identity -->
 
         <!-- Portfolio Item -->
-        <div class="grid-item category-btc category-mt4 category-usa category-worth">
-          <a href="https://swingfish.zulutrade.com" target="_blank" class="portfolio-item">
-			<iframe id="iframe-dynamic-banner" src="https://www.zulutrade.com/widgets/banner/rectangle?Lang=en&ref=2019419&utm_source=51611&utm_medium=affiliate&utm_campaign=DynamicBanner300x250&size=10" scrolling="no" style="border: 1px solid rgb(216, 221, 230); border-radius: 3px; width: 360px; height: 250px;"></iframe>
-          </a>
-        </div><!-- .grid-item.identity -->
-
-        <!-- Portfolio Item -->
         <div class="grid-item category-ib category-btc category-mt4 category-usa">
           <a href="https://swingfish.zulutrade.com" target="_blank" class="portfolio-item">
             <div class="thumbnail waves-effect waves-light">
