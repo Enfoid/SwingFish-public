@@ -50,6 +50,16 @@
         </div><!-- .grid-item.identity -->
 
         <!-- Portfolio Item -->
+        <div class="grid-item category-ib category-btc category-ctrader">
+          <a href="/ib/skilling" target="_blank" class="portfolio-item">
+            <div class="thumbnail waves-effect waves-light">
+              <img src="/assets/brokers/skilling-studyp.png?t=1" alt="Skilling Logo">
+            </div>
+            <h3 class="portfolio-title">ZuluTrade</h3>
+          </a>
+        </div><!-- .grid-item.identity -->
+
+        <!-- Portfolio Item -->
         <div class="grid-item category-ib category-btc category-mt4 category-usa">
           <a href="https://swingfish.zulutrade.com" target="_blank" class="portfolio-item">
             <div class="thumbnail waves-effect waves-light">
