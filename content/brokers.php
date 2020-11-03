@@ -55,7 +55,7 @@
             <div class="thumbnail waves-effect waves-light">
               <img src="/assets/brokers/skilling-studyp.png?t=1" alt="Skilling Logo">
             </div>
-            <h3 class="portfolio-title">ZuluTrade</h3>
+            <h3 class="portfolio-title">Skilling</h3>
           </a>
         </div><!-- .grid-item.identity -->
 
