@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Audiowide'; /*a name to be used later*/
+    src: url('/assets/fonts/Audiowide/Audiowide-Regular.ttf');
+}
+.swingfish {
+    font-family: 'Audiowide','Helvetica','Arial','sans-serif';
+}

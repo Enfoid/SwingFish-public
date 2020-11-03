@@ -1,0 +1,31 @@
+{
+  "name": "youtubeBackground.min",
+  "version": "1.0.1",
+  "homepage": "https://github.com/rku4er/youtubeBackground.min",
+  "authors": [
+    "Benton Rochester <bentonrochester@gmail.com>",
+    "Benjamin Sterling <benjamin.sterling@kenzomedia.com"
+  ],
+  "description": "A wrapper for the Youtube API - Great for fullscreen background videos or just regular videos.",
+  "main": "build/jquery.youtubebackground.min.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "jquery",
+    "background",
+    "video"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "source/js/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1"
+  }
+}

@@ -1,0 +1,17 @@
+/*  Force browser to show a pointer on tab navigation. */
+.tabs a {
+	cursor: pointer;
+}
+
+/*  Hide tab content if javascript is enabled. */
+.js-tabby .tabs-pane {
+	display: none;
+	visibility: hidden;
+}
+
+/*  Show tab content when active class is added.
+ *  This class is added via javascript. */
+.tabs-pane.active {
+	display: block;
+	visibility: visible;
+}

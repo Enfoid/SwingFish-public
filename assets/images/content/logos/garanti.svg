@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="646" height="117" viewBox="0 0 646 117">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 100px;
+        fill: #fff;
+        font-family: Circe;
+        font-weight: 700;
+      }
+    </style>
+  </defs>
+  <text id="example_svg" data-name="example svg" class="cls-1" x="58" y="83">example svg</text>
+</svg>
