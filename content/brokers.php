@@ -50,7 +50,7 @@
         </div><!-- .grid-item.identity -->
 
         <!-- Portfolio Item -->
-        <div class="grid-item category-ib category-btc category-ctrader">
+        <div class="grid-item category-ib category-btc category-stocks category-ctrader">
           <a href="/ib/skilling" target="_blank" class="portfolio-item">
             <div class="thumbnail waves-effect waves-light">
               <img src="/assets/brokers/skilling-studyp.png?t=1" alt="Skilling Logo">
