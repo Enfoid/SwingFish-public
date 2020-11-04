@@ -2,7 +2,9 @@
 
 // download: https://drive.google.com/file/d/16s89aYWuLfPNNuYwQgd740TgImrBl7PW/view?usp=sharing
 
-$readme = "https://drive.google.com/uc?export=download&id=16mz2uLi08Jol8pm3CaA61KmGqMc0YKIb";
+//$readme = "https://drive.google.com/uc?export=download&id=16mz2uLi08Jol8pm3CaA61KmGqMc0YKIb";
+$readme = "https://swingfish.trade/assets/downloads/SwingFish_Helper/README.md";
+
 $app = "swingfish-helper";
 
 $now = (int)time();
