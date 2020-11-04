@@ -26,6 +26,7 @@ Beta changes (in progress)
  - using internal folders 
 
 Changes:
+    - move cache to ~/tmp
     - fixed "reconnect-hedge-bug" bot will not hedge if it is unaware of the current positions.
     - MarginCall ALWAYS triggers (even if hedging is turned off or no targets are set!
     - remove of chart-symbol (always hedging globally)
