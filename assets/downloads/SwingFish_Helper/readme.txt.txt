@@ -1,25 +1,85 @@
+2.12
 SwingFish Helper (GlobalTP+)
 
-closes all position once a target is reached!
+SwingFish Helper by Mario Hennenberger
 
-TP Part closes ALL Trades and Deletes All Orders once the equity or relative Profit is reached
+Auto Hedges Positions based on first position distance and/or overall Position Loss
+terminates ALL open Positions and delete ALL Pending Orders if Net Profit or Equity Target or max loss is reached
 
-TP Active:		ON/OFF Switch for Take Profit Functions
-			TP Active does NOT Deactivate Margin Call or Hedge Settings !!
-TP Profit:		Amount all trades combined have to be in profit to close all trades
-TP Equity:		Equity to reach to terminate all trades and delete all orders
-Margin Call:		Equity to close all orders (must be smaller than balance)
+License:
+    Creative Common "CC BY" - you are REQUIRED to mention me or swingfish.trade if you re-publish this.
 
-Hedge places Hedge Orders to Protect Account
-Hedge Distance:		Distance in Pips to Hedge (this works only at the first trade !)
-			once more than 1 Trade is open in the same Product, this setting will be ignored
-Hedge Max Loss (%):	once all positions in the same Product have a combined loss of XX percent based on the account balance .. hedges will be placed
-			WARNING: opening new positions afer the Hedge Loss value is smaller than the loss.. the Algo will Immidealty place another hedge to cover !!
-Hedge All:		if Active, ALL Products will be hedged / if Inactive only the Current Product will be hedged
+Contributions:
+    - Mario Hennenberger <swingfish@icloud.com> https://www.swingfish.trade
+    - tmc. <belochjiri@hotmail.com> https://ctdn.com/users/profile/tmc_
 
+get Updates:
+    - https://swingfish.trade/swingfish-helper
+    - https://ctdn.com/algos/cbots/show/1664 (no more updates here, sorry)
+
+ToDo:
+    - some times auto hedging happens always regardless of the equity  /// this is maybe fixed already with the double call removed
+
+Beta changes (in progress)
+ - allow re-hedging on existing positions
+ - re enable local protection 
+ - using internal folders 
 
 Changes:
-    - update cache directory
+    - fixed "reconnect-hedge-bug" bot will not hedge if it is unaware of the current positions.
+    - MarginCall ALWAYS triggers (even if hedging is turned off or no targets are set!
+    - remove of chart-symbol (always hedging globally)
+    - new Loss calculation includes Comissions and swaps
+    - use of pathfunctions to "find" logs and sounds
+    - if DayStart balance is set to 0
+      automatically get the start balance of the day
+    - HOTFIX (2.02) respect max order size,
+                    to prevent failed placements on maximum size
+    - sound setting ignores hedge sound
+    - change installer version (2.01)
+    - use Windows installer for sound files (no code change)
+    - default loss at 0.5%
+    - remove System.AttributeTargets.Class
+    - remove "Current Capital" setting (temporary)
+    - re arrange and rename of settings, no functional change (1.71)
+    - remove FullAccess (just requires Internet Access)
+    - sounds from archive folder in /Sounds/
+    - use order sounds (1.7)
+    - temporary use a flexible IP for update check
+    - ssl fix (1.61)
+    - fix for netting accounts (1.6.1)
+    - remove TP and SL from hedged positions
+    - change colors to reflect the Daystart (not the current trade)
+    - add version check (beta)
+    - play sounds from Documents Directory ('swingfish-helper-hedge.mp3')
+    - add notification sound (hardcoded path)
+    - hedge active by default
+    - 2 digit target
+    - remove (hedge globally setting (always hedging globally)
+    - add Capital Field for GLobals Profit/loss calculatios
+    - display cents (*10)
+    - stop not "stop" the bot but disables tp feature
+    - added daytrader balance
+    - remove Hedge Distance (pointless)
+    - remove Dummy variables for time (all in secounds now)
+    - show hours if more then 3600 sec to wait
+    - fix Spacin in display text
+    - time stops based on timezone
+    - remove double check in batch
+    - protection fix
+    - remove duplicated outputs
+    - in Protect Profit mode .. always use timer mode (fast)
+    - re-enable time stops with proper date functions
+    - negative stop (equity stop if over equity already) (1.51)
+    - disable cash target - if TP is set .. it will be converted to Equity target
+    - 2 line status 1 TP 1 Hedge
+    - show minutes to Close if more than 120 secounds till close
+    - scalp switch (use 100ms timer)
+    - kill after Execute Switch
+    - Global Chartobjects
+    - bug fixed if 0 pip position hedge is selected only
+    - 3 digit Equity calculation
+    - use percentage instead of absolute hedge value (Hedge Loss / Hedge Max Loss)
     - comment if only hedge
     - replace Hedge Global with Hedge ALL
     - export Hedge and GlobalTP to functions
