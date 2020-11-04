@@ -8,7 +8,8 @@ $readme = "https://swingfish.trade/assets/downloads/SwingFish_Helper/README.md";
 $app = "swingfish-helper";
 
 $now = (int)time();
-$cachetime = (int)86400; // 86400
+//$cachetime = (int)86400; // 86400
+$cachetime = (int)1; // 86400
 $cachefile = CACHE."/app_".$app.".readme.txt";
 
 function delete_first_line($filename) {
