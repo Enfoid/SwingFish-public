@@ -19,6 +19,7 @@ Hedge All:		if Active, ALL Products will be hedged / if Inactive only the Curren
 
 
 Changes:
+    - update cache directory
     - comment if only hedge
     - replace Hedge Global with Hedge ALL
     - export Hedge and GlobalTP to functions
