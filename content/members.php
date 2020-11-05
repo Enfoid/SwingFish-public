@@ -3,11 +3,11 @@
 		<div class="col-lg-9 col-md-8 col-lg-push-3 col-md-push-4">
 <?
 require_once(URI.'lib/3rd/discord/link/permission-functions.php');
-if ((isset($go[1]))&&($go[1]!="")&&(is_file(URI.'content/members.'.$go[1].'.php'))) {
-	include(URI.'content/members.'.$go[1].'.php');
+if ((isset($go[1]))&&($go[1]!="")&&(is_file(URI.'content/members/'.$go[1].'.php'))) {
+	include(URI.'content/members/'.$go[1].'.php');
 }
 else {
-	include(URI.'content/members.index.php');
+	include(URI.'content/members/index.php');
 }
 
 $BookCountFile = CACHE.'aws_bookcount';
