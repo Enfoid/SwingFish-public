@@ -3,7 +3,7 @@
 require_once(URI.'lib/3rd/discord/link/permission-functions.php');
 $_SESSION['discord']['return'] = "/members/prop";
 unset($_SESSION['form']);
-if (!checkDiscordPermission($_SESSION['discord']['id'], 'member')) {
+if (checkDiscordPermission($_SESSION['discord']['id'], 'member')) {
 
 if (!checkDiscordPermission($_SESSION['discord']['id'], 'ball')) {
 ?>
