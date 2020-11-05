@@ -3,7 +3,7 @@
 require_once(URI.'lib/3rd/discord/link/permission-functions.php');
 $_SESSION['discord']['return'] = "/members/prop";
 unset($_SESSION['form']);
-if (checkDiscordPermissionHtml('member')){
+if (!checkDiscordPermission($_SESSION['discord']['id'], 'member')) {
 
 if (!checkDiscordPermission($_SESSION['discord']['id'], 'ball')) {
 ?>
@@ -119,5 +119,8 @@ leads to a permanent community ban without warning!</h5></center>
 <li> This way of getting funded may take some time.</li>
 <li> By clicking the "Login with Discord" button above you are confirming that you agree and understand the requirements.</li>
 <hr />
+<?
+checkDiscordPermissionHtml('member');
+?>
 Is this taking too long? <a class="btn btn-sm" href="https://www.enfoid.com/prop/fast-track">Click Here to enrol immediately via Fast-track</a> <small>(does not require any participation)</small>.</center></p>
 <? } ?>
