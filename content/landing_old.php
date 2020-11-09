@@ -509,7 +509,7 @@
 												</div>
 											</div>
 											<div class="video--background">
-												<div class="video--background_placeholder" style="background-image: url(assets/cache/youtube_live_thumb.jpg)"></div>
+												<div class="video--background_placeholder" style="background-image: url(tmp/youtube_live_thumb.jpg)"></div>
 												<div class="video--background_color"></div>
 												<div data-video-youtube='{"videoId":"<?=$Youtube['videoId']?>"}' class="video--background_video"></div>
 											</div>

@@ -1,6 +1,6 @@
 <?
 if ((get_YoutubeLive()['live'] == 'true')) {
-	$rcounts = unserialize(file_get_contents(URI."assets/cache/restream_stats"));
+	$rcounts = unserialize(file_get_contents(URI."tmp/restream_stats"));
 }
 
 ?><section class="page-title">

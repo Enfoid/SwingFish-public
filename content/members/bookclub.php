@@ -5,7 +5,7 @@ $_SESSION['discord']['return'] = "/members/bookclub";
 if (checkDiscordPermissionHtml('mate')){
 
 
-$list = json_decode(file_get_contents(URI.'/assets/cache/TradersLib.json'),true);
+$list = json_decode(file_get_contents(URI.'/tmp/TradersLib.json'),true);
 $list = $list['Contents'];
 
 $base = 'https://s3.amazonaws.com/cdn-s3.lomoos.com/';

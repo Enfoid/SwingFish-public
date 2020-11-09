@@ -2,7 +2,7 @@
 $funds = json_decode(file_get_contents('http://enfoid.com/api/c/fundstats.json'));	
 include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 if ((get_YoutubeLive()['live'] == 'true')) {
-	$rcounts = unserialize(file_get_contents(URI."assets/cache/restream_stats"));
+	$rcounts = unserialize(file_get_contents(URI."tmp/restream_stats"));
 
 // print_r($rcounts['stats']);
 }

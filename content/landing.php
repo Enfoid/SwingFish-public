@@ -8,7 +8,7 @@ $funds = json_decode(file_get_contents('http://www.enfoid.com/api/c/fundstats.js
 
     $membersCount = count($JSON['members']);
 */
-    $wp_cat = json_decode(unserialize(file_get_contents(URI.'assets/cache/wp_categories')));
+    $wp_cat = json_decode(unserialize(file_get_contents(URI.'tmp/wp_categories')));
 	$i = 0;
 	$wp_totals = 0;
 	$wp_news = 0;
@@ -21,7 +21,7 @@ $funds = json_decode(file_get_contents('http://www.enfoid.com/api/c/fundstats.js
 		$i++;
 	}
 
-//    $wp_totals = json_decode(unserialize(file_get_contents(URI.'assets/cache/wp_totals')));
+//    $wp_totals = json_decode(unserialize(file_get_contents(URI.'tmp/wp_totals')));
 //	$wp_totals = $wp_totals[1];
 
 $wpr = json_decode(file_get_contents(URL.'lib/3rd/wordpress/site_lastpost.php'), true)[0];
