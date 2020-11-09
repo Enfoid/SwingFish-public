@@ -1,4 +1,4 @@
-0.41
+0.411
 StreamDeck Integration for cTrader
 
 allows the Elgato Stream Deck to communicate with cTrader
