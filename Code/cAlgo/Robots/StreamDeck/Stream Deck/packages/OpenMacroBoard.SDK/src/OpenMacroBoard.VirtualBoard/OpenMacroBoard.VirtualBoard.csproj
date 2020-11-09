@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net40</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Christian Wischenbart</Authors>
+    <Company>OpenMacroBoard</Company>
+    <Copyright>Copyright © OpenMacroBoard 2018 - 2019</Copyright>
+    <Description>A virtual macro board for development</Description>
+    <Version>0.2.1</Version>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/OpenMacroBoard/OpenMacroBoard.SDK</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/OpenMacroBoard/OpenMacroBoard.SDK</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/OpenMacroBoard/StreamDeckSharp/master/doc/icon64.png</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>streamdeck elgato stream deck macro board virtual</PackageTags>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="VirtualBoardControl.xaml" />
+    <None Remove="VirtualBoardWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="VirtualBoardControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VirtualBoardWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OpenMacroBoard.SDK\OpenMacroBoard.SDK.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+</Project>

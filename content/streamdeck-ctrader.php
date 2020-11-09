@@ -2,7 +2,7 @@
 
 // download: https://drive.google.com/file/d/16s89aYWuLfPNNuYwQgd740TgImrBl7PW/view?usp=sharing
 
-$readme = "https://drive.google.com/uc?export=download&id=1H3Ft6GFAI2epbryh9y_P-FjQkUxTY_7_";
+$readme = "https://raw.githubusercontent.com/Enfoid/SwingFish-public/master/Code/cAlgo/Robots/StreamDeck/README.md";
 $app = "streamdeck";
 
 $now = (int)time();

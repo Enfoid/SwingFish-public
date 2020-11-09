@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net40</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyVersion>0.3.0.0</AssemblyVersion>
+    <FileVersion>0.3.0.0</FileVersion>
+    <Version>0.3.0</Version>
+    <Authors>Christian Wischenbart</Authors>
+    <Company>OpenMacroBoard</Company>
+    <Description>Abstraction for macro boards (with LCD keys)</Description>
+    <Copyright>Copyright © OpenMacroBoard 2018 - 2019</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://openmacroboard.github.io/</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/OpenMacroBoard/StreamDeckSharp/master/doc/icon64.png</PackageIconUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>streamdeck elgato stream deck open macro board openmacroboard streamdeckmini streamdeckxl mini xl</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/OpenMacroBoard/OpenMacroBoard.SDK</RepositoryUrl>
+  </PropertyGroup>
+  
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+    <PackageReference Include="System.Drawing.Common">
+      <Version>4.5.1</Version>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>
