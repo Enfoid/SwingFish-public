@@ -117,7 +117,7 @@ leads to a permanent community ban without warning!</h5></center>
 <li> You have to be a <strong>ACTIVE & RESPECTED Member</strong> of the SwingFish community.</li>
 <li> Revenue created by the <a href="https://www.enfoid.com/project/swingfish" target="_blank">SwingFish Project</a> is used to pay for this process.</li>
 <li> This way of getting funded may take some time.</li>
-<li> By clicking the "Login with Discord" button above you are confirming that you agree and understand the requirements.</li>
+<li> By clicking the "Login with Discord" button below you are confirming that you agree and understand the requirements.</li>
 <hr />
 <?
 checkDiscordPermissionHtml('member');
