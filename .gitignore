@@ -1,5 +1,7 @@
 
 .DS_Store
+Website-assets/cache/*
+Website-assets/uploads/*
 assets/cache/*
 assets/uploads/*
 Static/ArtWork/_dev/Artofmayank/fiverr FO719FA922547/Thumb_HODL.psd
