@@ -40,11 +40,19 @@ namespace cAlgo.Indicators
         [Parameter("Alert Active", DefaultValue = true)]
         public bool VwapAlertActive { get; set; }
 
-        [Parameter("change BG", DefaultValue = false)]
+        [Parameter("BG Active", DefaultValue = false)]
         public bool PaintChart { get; set; }
 
         [Parameter("BG Opacity", DefaultValue = 255, MinValue = 0, MaxValue = 255)]
         public int Opc { get; set; }
+
+        [Parameter("BG Bull Color", DefaultValue = "LightGreen")]
+        public string BGColorU_ { get; set; }
+        Colors BGColorU = Colors.LightGreen;
+
+        [Parameter("BG Bull Color", DefaultValue = "Firebrick")]
+        public string BGColorD_ { get; set; }
+        Colors BGColorD = Colors.Firebrick;
 
         [Parameter("Alert distance", DefaultValue = 1)]
         public double VwapAlertDistance { get; set; }
@@ -174,6 +182,16 @@ namespace cAlgo.Indicators
         }
         public override void Calculate(int index)
         {
+
+            Enum.TryParse<Colors>(BGColorU_, out BGColorU);
+            if (BGColorU.ToString() == "0")
+                BGColorU = Colors.Gray;
+
+            Enum.TryParse<Colors>(BGColorD_, out BGColorD);
+            if (BGColorD.ToString() == "0")
+                BGColorD = Colors.Gray;
+
+
             switch (corner)
             {
                 case 1:
@@ -286,48 +304,19 @@ namespace cAlgo.Indicators
 //                Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, red, green, 0);
                 if (VWAP[index] < Symbol.Bid)
                 {
+                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 0, 255, 0);
 //                    Chart.ColorSettings.BackgroundColor = Color.DarkGreen;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 0, 50, 0);
-                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 0, colorfactor, 0);
                 }
-                else                /*
-if (colorfactor > 180)
-                    {
-                        Chart.ColorSettings.BearFillColor = Color.Black;
-                        Chart.ColorSettings.BearOutlineColor = Color.Black;
-                        Chart.ColorSettings.BullFillColor = Color.Navy;
-                        Chart.ColorSettings.BullOutlineColor = Color.Navy;
-                    }
-                    else
-                    {
-                        Chart.ColorSettings.BearFillColor = Color.FloralWhite;
-                        Chart.ColorSettings.BearOutlineColor = Color.FloralWhite;
-                        Chart.ColorSettings.BullFillColor = Color.FloralWhite;
-                        Chart.ColorSettings.BullOutlineColor = Color.FloralWhite;
-                    }
-*/
+
+                else
                 {
+                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 255, 0, 0);
 //                    Chart.ColorSettings.BackgroundColor = Color.SaddleBrown;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 70, 0, 0);
-                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, colorfactor, 0, 0);
                 }
             }
-            /*
-if (colorfactor > 180)
-                    {
-                        Chart.ColorSettings.BearFillColor = Color.Black;
-                        Chart.ColorSettings.BullFillColor = Color.Black;
-                        Chart.ColorSettings.BearOutlineColor = Color.Navy;
-                        Chart.ColorSettings.BullOutlineColor = Color.Navy;
-                    }
-                    else
-                    {
-                        Chart.ColorSettings.BearFillColor = Color.FloralWhite;
-                        Chart.ColorSettings.BearOutlineColor = Color.FloralWhite;
-                        Chart.ColorSettings.BullFillColor = Color.FloralWhite;
-                        Chart.ColorSettings.BullOutlineColor = Color.FloralWhite;
-                    }
-*/
+
 //                Print(cl1);
             return;
         }
