@@ -43,7 +43,8 @@ namespace cAlgo.Indicators
         [Parameter("BG Active", DefaultValue = false)]
         public bool PaintChart { get; set; }
 
-        [Parameter("BG Opacity", DefaultValue = 255, MinValue = 0, MaxValue = 255)]
+        /*
+ [Parameter("BG Opacity", DefaultValue = 255, MinValue = 0, MaxValue = 255)]
         public int Opc { get; set; }
 
         [Parameter("BG Bull Color", DefaultValue = "LightGreen")]
@@ -54,6 +55,7 @@ namespace cAlgo.Indicators
         public string BGColorD_ { get; set; }
         Colors BGColorD = Colors.Firebrick;
 
+*/
         [Parameter("Alert distance", DefaultValue = 1)]
         public double VwapAlertDistance { get; set; }
 
@@ -183,7 +185,8 @@ namespace cAlgo.Indicators
         public override void Calculate(int index)
         {
 
-            Enum.TryParse<Colors>(BGColorU_, out BGColorU);
+                        /*
+Enum.TryParse<Colors>(BGColorU_, out BGColorU);
             if (BGColorU.ToString() == "0")
                 BGColorU = Colors.Gray;
 
@@ -191,8 +194,9 @@ namespace cAlgo.Indicators
             if (BGColorD.ToString() == "0")
                 BGColorD = Colors.Gray;
 
+*/
 
-            switch (corner)
+switch (corner)
             {
                 case 1:
                     corner_position = StaticPosition.TopLeft;
@@ -305,14 +309,14 @@ namespace cAlgo.Indicators
                 if (VWAP[index] < Symbol.Bid)
                 {
                     Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 0, 255, 0);
-//                    Chart.ColorSettings.BackgroundColor = Color.DarkGreen;
+//                    Chart.ColorSettings.BackgroundColor = BGColorD;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 0, 50, 0);
                 }
 
                 else
                 {
                     Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 255, 0, 0);
-//                    Chart.ColorSettings.BackgroundColor = Color.SaddleBrown;
+//                    Chart.ColorSettings.BackgroundColor = BGColorU;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 70, 0, 0);
                 }
             }
