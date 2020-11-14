@@ -15,15 +15,11 @@ namespace cAlgo.Indicators
     //TimeZone = TimeZones.UTC
     public class IntraDayStandardDeviation : Indicator
     {
-        [Parameter("MA Type")]
-        public MovingAverageType matype { get; set; }
-
-        [Parameter("Period", DefaultValue = 200)]
-        public int atrper { get; set; }
+        [Output("VWAP", PlotType = PlotType.Points, Thickness = 2, Color = Colors.Yellow)]
+        public IndicatorDataSeries VWAP { get; set; }
 
         [Output("atrpips")]
         public IndicatorDataSeries Result { get; set; }
-
 
         AverageTrueRange atr;
         ExponentialMovingAverage emaatr;
@@ -31,42 +27,56 @@ namespace cAlgo.Indicators
 //        private MovingAverage movingAverage;
 //        private StandardDeviation standardDeviation;
 
-        [Parameter("Offset Reset (candles)", DefaultValue = 0)]
+        [Parameter("Offset Reset (candles)", DefaultValue = 0, Group = "vWap")]
         public int TimeOffset { get; set; }
 
-        [Parameter("Show vWap History", DefaultValue = false)]
+        [Parameter("Show vWap History", DefaultValue = false, Group = "vWap")]
         public bool ShowHistoricalvWap { get; set; }
 
-        [Parameter("Alert Active", DefaultValue = true)]
-        public bool VwapAlertActive { get; set; }
-
-        [Parameter("BG Active", DefaultValue = false)]
-        public bool PaintChart { get; set; }
-
-        /*
- [Parameter("BG Opacity", DefaultValue = 255, MinValue = 0, MaxValue = 255)]
-        public int Opc { get; set; }
-
-        [Parameter("BG Bull Color", DefaultValue = "LightGreen")]
-        public string BGColorU_ { get; set; }
-        Colors BGColorU = Colors.LightGreen;
-
-        [Parameter("BG Bull Color", DefaultValue = "Firebrick")]
-        public string BGColorD_ { get; set; }
-        Colors BGColorD = Colors.Firebrick;
-
-*/
-        [Parameter("Alert distance", DefaultValue = 1)]
-        public double VwapAlertDistance { get; set; }
-
-        [Parameter("Alert Volume", DefaultValue = 100, MinValue = 0, MaxValue = 100)]
-        public int AlertVolume { get; set; }
-
-        [Parameter("Corner for Infos", DefaultValue = 0, MinValue = 0, MaxValue = 4)]
+        [Parameter("Corner for Infos", DefaultValue = 0, MinValue = 0, MaxValue = 4, Group = "vWap")]
         public int corner { get; set; }
 
-        [Output("VWAP", PlotType = PlotType.Points, Thickness = 2, Color = Colors.Yellow)]
-        public IndicatorDataSeries VWAP { get; set; }
+
+        [Parameter("Alert Active", DefaultValue = false, Group = "Alert")]
+        public bool VwapAlertActive { get; set; }
+
+        [Parameter("Alert distance", DefaultValue = 1, Group = "Alert")]
+        public double VwapAlertDistance { get; set; }
+
+        [Parameter("Alert Volume", DefaultValue = 100, MinValue = 0, MaxValue = 100, Group = "Alert")]
+        public int AlertVolume { get; set; }
+
+
+        [Parameter("BG Active", DefaultValue = false, Group = "Background")]
+        public bool PaintChart { get; set; }
+
+// Opacity is used to set alpha now
+//        [Parameter("BG Opacity", DefaultValue = 255, MinValue = 0, MaxValue = 255, Group = "Background")]
+//        public int Opc { get; set; }
+
+        Color BGColorU;
+        [Parameter("BG Bull Color", DefaultValue = "LightGreen", Group = "Background")]
+        public string BGColorU_ { get; set; }
+
+
+        Color BGColorD;
+        [Parameter("BG Bear Color", DefaultValue = "Firebrick", Group = "Background")]
+        public string BGColorD_ { get; set; }
+//        Colors BGColorD = Colors.Firebrick;
+
+
+
+
+
+        [Parameter("MA Type", DefaultValue = "Simple", Group = "Testing SHit")]
+        public MovingAverageType matype { get; set; }
+
+
+        [Parameter("BG ATR Sensitivity", DefaultValue = 200, Group = "Testing SHit")]
+        public int atrper { get; set; }
+
+
+
 
 //      crappy cTrader 3.7 fix ?
         private MarketSeries _ms;
@@ -171,32 +181,7 @@ namespace cAlgo.Indicators
         }
         protected override void Initialize()
         {
-//            movingAverage = Indicators.MovingAverage(VWAP, 14, MovingAverageType.Simple);
-//            standardDeviation = Indicators.StandardDeviation(VWAP, 14, MovingAverageType.Simple);
-            atr = Indicators.AverageTrueRange(atrper, MovingAverageType.Simple);
-
-            _synthesizer = new SpeechSynthesizer 
-            {
-                Volume = AlertVolume,
-                Rate = -1
-
-            };
-        }
-        public override void Calculate(int index)
-        {
-
-                        /*
-Enum.TryParse<Colors>(BGColorU_, out BGColorU);
-            if (BGColorU.ToString() == "0")
-                BGColorU = Colors.Gray;
-
-            Enum.TryParse<Colors>(BGColorD_, out BGColorD);
-            if (BGColorD.ToString() == "0")
-                BGColorD = Colors.Gray;
-
-*/
-
-switch (corner)
+            switch (corner)
             {
                 case 1:
                     corner_position = StaticPosition.TopLeft;
@@ -211,6 +196,29 @@ switch (corner)
                     corner_position = StaticPosition.BottomRight;
                     break;
             }
+
+//            if (!Enum.TryParse(BGColorD_, out BGColorD))
+//            if (!Enum.TryParse(BGColorD_, true, out BGColorD))
+            BGColorD = Color.Gray;
+
+//            if (!Enum.TryParse(BGColorU_, true, out BGColorU))
+            BGColorU = Color.Gray;
+
+//            movingAverage = Indicators.MovingAverage(VWAP, 14, MovingAverageType.Simple);
+//            standardDeviation = Indicators.StandardDeviation(VWAP, 14, MovingAverageType.Simple);
+            atr = Indicators.AverageTrueRange(atrper, MovingAverageType.Simple);
+
+            _synthesizer = new SpeechSynthesizer 
+            {
+                Volume = AlertVolume,
+                Rate = -1
+
+            };
+        }
+        public override void Calculate(int index)
+        {
+
+
             int end_bar = index;
             int CurrentDay = MarketSeries.OpenTime[end_bar].DayOfYear;
             double TotalPV = 0;
@@ -308,14 +316,17 @@ switch (corner)
 //                Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, red, green, 0);
                 if (VWAP[index] < Symbol.Bid)
                 {
-                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 0, 255, 0);
+                    Color.FromArgb(colorfactor, BGColorD);
+//                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 0, 255, 0);
+//                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 0, 255, 0);
 //                    Chart.ColorSettings.BackgroundColor = BGColorD;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 0, 50, 0);
                 }
 
                 else
                 {
-                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 255, 0, 0);
+                    Color.FromArgb(colorfactor, BGColorU);
+//                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 255, 0, 0);
 //                    Chart.ColorSettings.BackgroundColor = BGColorU;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 70, 0, 0);
                 }
