@@ -18,65 +18,44 @@ namespace cAlgo.Indicators
         [Output("VWAP", PlotType = PlotType.Points, Thickness = 2, Color = Colors.Yellow)]
         public IndicatorDataSeries VWAP { get; set; }
 
-        [Output("atrpips")]
-        public IndicatorDataSeries Result { get; set; }
-
-        AverageTrueRange atr;
-        ExponentialMovingAverage emaatr;
-
-//        private MovingAverage movingAverage;
-//        private StandardDeviation standardDeviation;
-
-        [Parameter("Offset Reset (candles)", DefaultValue = 0, Group = "vWap")]
+        [Parameter("Show vWap History", DefaultValue = false, Group = "General")]
+        public bool ShowHistoricalvWap { get; set; }
+        [Parameter("Corner for Infos", DefaultValue = 0, MinValue = 0, MaxValue = 4, Group = "General")]
+        public int corner { get; set; }
+        [Parameter("Offset Reset (candles)", DefaultValue = 0, Group = "General")]
         public int TimeOffset { get; set; }
 
-        [Parameter("Show vWap History", DefaultValue = false, Group = "vWap")]
-        public bool ShowHistoricalvWap { get; set; }
-
-        [Parameter("Corner for Infos", DefaultValue = 0, MinValue = 0, MaxValue = 4, Group = "vWap")]
-        public int corner { get; set; }
 
 
-        [Parameter("Alert Active", DefaultValue = false, Group = "Alert")]
+        [Parameter("Voice Active", DefaultValue = true, Group = "Voice")]
         public bool VwapAlertActive { get; set; }
 
-        [Parameter("Alert distance", DefaultValue = 1, Group = "Alert")]
+        [Parameter("Trigger distance", DefaultValue = 1, Group = "Voice")]
         public double VwapAlertDistance { get; set; }
 
-        [Parameter("Alert Volume", DefaultValue = 100, MinValue = 0, MaxValue = 100, Group = "Alert")]
+        [Parameter("Volume", DefaultValue = 100, MinValue = 0, MaxValue = 100, Group = "Voice")]
         public int AlertVolume { get; set; }
 
 
-        [Parameter("BG Active", DefaultValue = false, Group = "Background")]
+        [Parameter("BG Active", DefaultValue = false, Group = "Color")]
         public bool PaintChart { get; set; }
 
-// Opacity is used to set alpha now
-//        [Parameter("BG Opacity", DefaultValue = 255, MinValue = 0, MaxValue = 255, Group = "Background")]
-//        public int Opc { get; set; }
-
-        Color BGColorU;
-        [Parameter("BG Bull Color", DefaultValue = "LightGreen", Group = "Background")]
+        [Parameter("BG Bull Color", DefaultValue = "LightGreen", Group = "Color")]
         public string BGColorU_ { get; set; }
 
-
-        Color BGColorD;
-        [Parameter("BG Bear Color", DefaultValue = "Firebrick", Group = "Background")]
+        [Parameter("BG Bull Color", DefaultValue = "Firebrick", Group = "Color")]
         public string BGColorD_ { get; set; }
-//        Colors BGColorD = Colors.Firebrick;
 
 
 
-
-
-        [Parameter("MA Type", DefaultValue = "Simple", Group = "Testing SHit")]
+        [Parameter("MA Type", Group = "Experimental")]
         public MovingAverageType matype { get; set; }
 
-
-        [Parameter("BG ATR Sensitivity", DefaultValue = 200, Group = "Testing SHit")]
+        [Parameter("Period", DefaultValue = 200, Group = "Experimental")]
         public int atrper { get; set; }
 
-
-
+        [Parameter("BG Opacity", DefaultValue = 255, MinValue = 0, MaxValue = 255, Group = "Experimental")]
+        public int Opc { get; set; }
 
 //      crappy cTrader 3.7 fix ?
         private MarketSeries _ms;
@@ -90,6 +69,7 @@ namespace cAlgo.Indicators
             }
         }
 
+        AverageTrueRange atr;
         private SpeechSynthesizer _synthesizer;
 
 //       private int end_bar = 0;
@@ -181,6 +161,18 @@ namespace cAlgo.Indicators
         }
         protected override void Initialize()
         {
+            atr = Indicators.AverageTrueRange(atrper, MovingAverageType.Simple);
+
+            _synthesizer = new SpeechSynthesizer 
+            {
+                Volume = AlertVolume,
+                Rate = -1
+
+            };
+        }
+        public override void Calculate(int index)
+        {
+
             switch (corner)
             {
                 case 1:
@@ -196,29 +188,6 @@ namespace cAlgo.Indicators
                     corner_position = StaticPosition.BottomRight;
                     break;
             }
-
-//            if (!Enum.TryParse(BGColorD_, out BGColorD))
-//            if (!Enum.TryParse(BGColorD_, true, out BGColorD))
-            BGColorD = Color.Gray;
-
-//            if (!Enum.TryParse(BGColorU_, true, out BGColorU))
-            BGColorU = Color.Gray;
-
-//            movingAverage = Indicators.MovingAverage(VWAP, 14, MovingAverageType.Simple);
-//            standardDeviation = Indicators.StandardDeviation(VWAP, 14, MovingAverageType.Simple);
-            atr = Indicators.AverageTrueRange(atrper, MovingAverageType.Simple);
-
-            _synthesizer = new SpeechSynthesizer 
-            {
-                Volume = AlertVolume,
-                Rate = -1
-
-            };
-        }
-        public override void Calculate(int index)
-        {
-
-
             int end_bar = index;
             int CurrentDay = MarketSeries.OpenTime[end_bar].DayOfYear;
             double TotalPV = 0;
@@ -298,14 +267,14 @@ namespace cAlgo.Indicators
 
                 double vWapDistanceFactor = 255 * (cl1 / Math.Round((Math.Abs(VWAP[index] - Symbol.Bid) / Symbol.PipSize)));
 
-                int colorfactor = Convert.ToInt32(vWapDistanceFactor);
+                int alpha = Convert.ToInt32(vWapDistanceFactor);
 
-                if (vWapDistanceFactor > 255)
+                if (alpha > 255)
                 {
-                    colorfactor = 255;
+                    alpha = 255;
                 }
 
-                Print("atr" + cl1 + " df " + vWapDistanceFactor + " cf " + colorfactor);
+                Print("atr" + cl1 + " df " + vWapDistanceFactor + " cf " + alpha);
 
 //                double cl1i = (((VWAP[index] - movingAverage.Result[index]) / standardDeviation.Result[index]) * 50);
 //                int cl1 = Math.Abs((int)cl1i);
@@ -316,18 +285,15 @@ namespace cAlgo.Indicators
 //                Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, red, green, 0);
                 if (VWAP[index] < Symbol.Bid)
                 {
-                    Color.FromArgb(colorfactor, BGColorD);
-//                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 0, 255, 0);
-//                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 0, 255, 0);
-//                    Chart.ColorSettings.BackgroundColor = BGColorD;
+                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(alpha, BGColorU_);
+//                    Chart.ColorSettings.BackgroundColor = Color.DarkGreen;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 0, 50, 0);
                 }
 
                 else
                 {
-                    Color.FromArgb(colorfactor, BGColorU);
-//                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(colorfactor, 255, 0, 0);
-//                    Chart.ColorSettings.BackgroundColor = BGColorU;
+                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(alpha, BGColorD_);
+//                    Chart.ColorSettings.BackgroundColor = Color.SaddleBrown;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 70, 0, 0);
                 }
             }
@@ -336,4 +302,5 @@ namespace cAlgo.Indicators
             return;
         }
     }
+}
 }
