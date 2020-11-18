@@ -86,6 +86,7 @@ namespace cAlgo.Indicators
         }
 
         private string CmdArgs;
+
         private bool Say2(string Sim)
         {
             CmdArgs = "-Command \"Add-Type –AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('" + Sim + "');\"";
@@ -283,9 +284,20 @@ namespace cAlgo.Indicators
 //                int red = (int)Math.Max(VWAP[index] / VWAP[1], 0);
 //                int green = (int)Math.Max(VWAP[index], 0);
 //                Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, red, green, 0);
+
                 if (VWAP[index] < Symbol.Bid)
                 {
                     Chart.ColorSettings.BackgroundColor = Color.FromArgb(alpha, BGColorU_);
+                    if (alpha > 150)
+                    {
+//                        Chart.ColorSettings.BullOutlineColor = Color.Black;
+//                        Chart.ColorSettings.BearOutlineColor = Color.Black;
+                    }
+                    else
+                    {
+//                        Chart.ColorSettings.BullOutlineColor = Color.Gray;
+//                        Chart.ColorSettings.BearOutlineColor = Color.Gray;
+                    }
 //                    Chart.ColorSettings.BackgroundColor = Color.DarkGreen;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 0, 50, 0);
                 }
@@ -293,6 +305,18 @@ namespace cAlgo.Indicators
                 else
                 {
                     Chart.ColorSettings.BackgroundColor = Color.FromArgb(alpha, BGColorD_);
+//                    Chart.ColorSettings.BullOutlineColor = Color.FromArgb(255, Chart.ColorSettings.BackgroundColor.ToArgb() ^ 0xffffff);
+//                    Chart.ColorSettings.BearOutlineColor = Color.FromArgb(255, Chart.ColorSettings.BackgroundColor.ToArgb() ^ 0xffffff);
+                    if (alpha > 150)
+                    {
+                        //                       Chart.ColorSettings.BullOutlineColor = Color.Blue;
+                        //                       Chart.ColorSettings.BearOutlineColor = Color.Blue;
+                    }
+                    else
+                    {
+//                        Chart.ColorSettings.BullOutlineColor = Color.Gray;
+//                        Chart.ColorSettings.BearOutlineColor = Color.Gray;
+                    }
 //                    Chart.ColorSettings.BackgroundColor = Color.SaddleBrown;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 70, 0, 0);
                 }
@@ -302,5 +326,4 @@ namespace cAlgo.Indicators
             return;
         }
     }
-}
 }
