@@ -1,7 +1,4 @@
 <?
-<<<<<<< HEAD
-include("synthetics.php");
-=======
 $funds = json_decode(file_get_contents('http://enfoid.com/api/c/fundstats.json'));	
 include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 if ((get_YoutubeLive()['live'] == 'true')) {
@@ -227,4 +224,3 @@ echo '		</div>
 	</div>
 </section>';
 						}
->>>>>>> 7a0d93a... Server commit
