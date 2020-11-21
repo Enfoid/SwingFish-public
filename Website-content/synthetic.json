@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "sitepart": "synthetics",
     "en": {
         "title": "Trading Synthetic Assets",
@@ -7,5 +8,15 @@
     "de": {
         "title": "Kostenfreie Forex Trade Signale",
         "summary": "Forex Trade Signale, Kostenlos fuer jederman"
+=======
+    "sitepart": "tradingroom",
+    "en": {
+        "title": "The SwingFish TradingRoom - where the magic happens, in Realtime, Streamed and Logged",
+        "summary": "to provide proof of concept, trades made live, streamed in Realtime, logged in the Blog and community participants can even interact directly. BS Free, all Gains, all Losses, Guaranteed!"
+    },
+    "de": {
+        "title": "SwingFish Tradingroom - where the magic happens",
+        "summary": "SwingFish, die Trader und Investoren Gemeinschaft. Keine leeren Versprechungen, klaare regeln, klaare Gewinne, Garantiert!"
+>>>>>>> 7a0d93a... Server commit
     }
 }
