@@ -40,10 +40,10 @@ namespace cAlgo.Indicators
         [Parameter("BG Active", DefaultValue = false, Group = "Color")]
         public bool PaintChart { get; set; }
 
-        [Parameter("BG Bull Color", DefaultValue = "LightGreen", Group = "Color")]
+        [Parameter("BG Bull Color", DefaultValue = "Teal", Group = "Color")]
         public string BGColorU_ { get; set; }
 
-        [Parameter("BG Bull Color", DefaultValue = "Firebrick", Group = "Color")]
+        [Parameter("BG Bull Color", DefaultValue = "IndianRed", Group = "Color")]
         public string BGColorD_ { get; set; }
 
 
