@@ -290,13 +290,13 @@ namespace cAlgo.Indicators
                     Chart.ColorSettings.BackgroundColor = Color.FromArgb(alpha, BGColorU_);
                     if (alpha > 150)
                     {
-//                        Chart.ColorSettings.BullOutlineColor = Color.Black;
-//                        Chart.ColorSettings.BearOutlineColor = Color.Black;
+                        Chart.ColorSettings.BullOutlineColor = Color.Indigo;
+                        Chart.ColorSettings.BearOutlineColor = Color.Indigo;
                     }
                     else
                     {
-//                        Chart.ColorSettings.BullOutlineColor = Color.Gray;
-//                        Chart.ColorSettings.BearOutlineColor = Color.Gray;
+                        Chart.ColorSettings.BullOutlineColor = Color.White;
+                        Chart.ColorSettings.BearOutlineColor = Color.White;
                     }
 //                    Chart.ColorSettings.BackgroundColor = Color.DarkGreen;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 0, 50, 0);
@@ -309,13 +309,13 @@ namespace cAlgo.Indicators
 //                    Chart.ColorSettings.BearOutlineColor = Color.FromArgb(255, Chart.ColorSettings.BackgroundColor.ToArgb() ^ 0xffffff);
                     if (alpha > 150)
                     {
-                        //                       Chart.ColorSettings.BullOutlineColor = Color.Blue;
-                        //                       Chart.ColorSettings.BearOutlineColor = Color.Blue;
+                        Chart.ColorSettings.BullOutlineColor = Color.Indigo;
+                        Chart.ColorSettings.BearOutlineColor = Color.Indigo;
                     }
                     else
                     {
-//                        Chart.ColorSettings.BullOutlineColor = Color.Gray;
-//                        Chart.ColorSettings.BearOutlineColor = Color.Gray;
+                        Chart.ColorSettings.BullOutlineColor = Color.White;
+                        Chart.ColorSettings.BearOutlineColor = Color.White;
                     }
 //                    Chart.ColorSettings.BackgroundColor = Color.SaddleBrown;
 //                    Chart.ColorSettings.BackgroundColor = Color.FromArgb(Opc, 70, 0, 0);
