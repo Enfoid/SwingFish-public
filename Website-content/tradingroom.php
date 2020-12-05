@@ -139,7 +139,7 @@ if (($funds->visuals->swingfish1000->lookback-$funds->visuals->swingfish1000->Da
 }
 ?></p><a class="btn btn-sm btn-success" href="https://www.enfoid.com/investors/profit-share" target="_blank">More details ..</a>
 </div>
-				<div role="tabpanel" class="tab-pane transition fade in active" id="ResultsSynthetics">
+				<div role="tabpanel" class="tab-pane transition fade" id="ResultsSynthetics">
 <div class="progress progress-animated" style="height: 28px;">
             <div class="label">
               <?
