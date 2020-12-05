@@ -105,7 +105,7 @@ new Chart(document.getElementById("myChart"), {
           label: "Winrate (0.1%)",
           type: "line",
           borderColor: "#62b7ff",
-          data: [<?=substr($funds->visuals->swingfishSynth->chartwinrate, 9)?>,
+          data: [<?=substr($funds->visuals->swingfish1000->chartgain, 9)?>,
           fill: false
         }
       ]

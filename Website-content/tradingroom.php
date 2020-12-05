@@ -76,31 +76,23 @@ if ((get_YoutubeLive()['live'] == 'true')) {
                 <div class="column"><span>updated: <?=$funds->visuals->swingfish1000->updatedAgo?></span></div>
               </div><!-- .post-meta -->
 <canvas id="myChart" height="180"></canvas>
-<div class="progress progress-animated" style="height: 28px;">
-            <div class="label">
-              <?
-              $wrr = round(((1 - intval($funds->visuals->swingfish1000->TradesTotal-$funds->visuals->swingfish1000->TradesWon) / intval($funds->visuals->swingfish1000->TradesTotal)) * 100),0);
-              ?><span style="line-height: 8px;">Winrate <?=$wrr?>%</span>
-            </div>
-            <div class="progress-bar progress-bar-primary" data-valuenow="<?=$wrr?>" style="width: <?=$wrr?>%;"></div>
-          </div>
 <script>
 new Chart(document.getElementById("myChart"), {
     type: 'bar',
     data: {
       labels: <?=$funds->visuals->swingfish1000->chartcategories?>,
       datasets: [{
-          label: "Cumulative Gain",
+          label: "FOREX",
           type: "line",
           borderColor: "#8e5ea2",
           data: [<?=substr($funds->visuals->swingfish1000->chartgain, 9)?>,
           fill: true
         },
 {
-          label: "Winrate (0.1%)",
+          label: "SYNTHETICS",
           type: "line",
           borderColor: "#62b7ff",
-          data: [<?=substr($funds->visuals->swingfish1000->chartwinrate, 9)?>,
+          data: [<?=substr($funds->visuals->swingfishSynth->chartgain, 9)?>,
           fill: false
         }
       ]
@@ -112,7 +104,21 @@ new Chart(document.getElementById("myChart"), {
       },
       legend: { display: true }
     }
-});</script><h3><?=round($funds->visuals->swingfish1000->gain,2)?>% Gain</h3>
+});</script>			<ul class="nav-tabs" role="tablist">
+				<li><a href="#ResultsForex" role="tab" data-toggle="tab">Forex</a></li>
+				<li><a href="#ResultsSynthetics" role="tab" data-toggle="tab">Synthetics</a></li>
+			</ul><!-- .nav-tabs -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane transition fade in active" id="ResultsForex">
+<div class="progress progress-animated" style="height: 28px;">
+            <div class="label">
+              <?
+              $wrr = round(((1 - intval($funds->visuals->swingfish1000->TradesTotal-$funds->visuals->swingfish1000->TradesWon) / intval($funds->visuals->swingfish1000->TradesTotal)) * 100),0);
+              ?><span style="line-height: 8px;">Winrate <?=$wrr?>%</span>
+            </div>
+            <div class="progress-bar progress-bar-primary" data-valuenow="<?=$wrr?>" style="width: <?=$wrr?>%;"></div>
+          </div>
+<h3><?=round($funds->visuals->swingfish1000->gain,2)?>% Cumulative <strong><u>Forex</u></strong> Gain</h3>
 <?
 setlocale(LC_MONETARY, 'en_US.utf8');
 ?><p><strong><?=money_format("%.0n", round($funds->visuals->swingfish1000->volume,-2))?></strong> Traded Volume over </i><?=$funds->visuals->swingfish1000->TradesTotal?> Trades</p>
@@ -132,6 +138,38 @@ if (($funds->visuals->swingfish1000->lookback-$funds->visuals->swingfish1000->Da
 	echo '<p align="right">[<small>Last losing day was <strong>'. round(((time()-$funds->visuals->swingfish1000->DayLostLast)/86400),0).' days ago</strong></small>]</p>';
 }
 ?></p><a class="btn btn-sm btn-success" href="https://www.enfoid.com/investors/profit-share" target="_blank">More details ..</a>
+</div>
+				<div role="tabpanel" class="tab-pane transition fade in active" id="ResultsSynthetics">
+<div class="progress progress-animated" style="height: 28px;">
+            <div class="label">
+              <?
+              $wrr = round(((1 - intval($funds->visuals->swingfishSynth->TradesTotal-$funds->visuals->swingfishSynth->TradesWon) / intval($funds->visuals->swingfishSynth->TradesTotal)) * 100),0);
+              ?><span style="line-height: 8px;">Winrate <?=$wrr?>%</span>
+            </div>
+            <div class="progress-bar progress-bar-primary" data-valuenow="<?=$wrr?>" style="width: <?=$wrr?>%;"></div>
+          </div>
+<h3><?=round($funds->visuals->swingfishSynth->gain,2)?>% Cumulative <strong><u>Synthetics</u></strong> Gain</h3>
+<?
+setlocale(LC_MONETARY, 'en_US.utf8');
+?><p><strong><?=money_format("%.0n", round($funds->visuals->swingfishSynth->volume,-2))?></strong> Traded Volume over </i><?=$funds->visuals->swingfishSynth->TradesTotal?> Trades</p>
+<p><?=$funds->visuals->swingfishSynth->TradesWon?> Trades won vs. <?=$funds->visuals->swingfishSynth->TradesTotal-$funds->visuals->swingfishSynth->TradesWon?> Trades lost</p>
+<p><?
+if (($funds->visuals->swingfish1000->lookback-$funds->visuals->swingfish1000->DaysWon) == 0) {
+}
+else {?>
+	<p><?=$funds->visuals->swingfishSynth->DaysWon?> Profitable day<? if ($funds->visuals->swingfishSynth->DaysWon>1 || $funds->visuals->swingfishSynth->DaysWon == 0) { echo "s"; }?> vs. <?=$funds->visuals->swingfishSynth->DaysLost?> Losing day<? if ($funds->visuals->swingfishSynth->DaysLost>1 || $funds->visuals->swingfishSynth->DaysLost == 0) { echo "s"; } }?></p>
+
+
+
+<?
+if ($funds->visuals->swingfishSynth->Profitfactor > 0.8) { ?><p>Profit Factor <?=round($funds->visuals->swingfishSynth->Profitfactor,2)?> &amp; <?=round($funds->visuals->swingfishSynth->Sharperatio,2)?> Sharpe Ratio</p>
+<? }
+if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->DaysWon) == 0) {
+	echo '<p align="right">[<small>Last losing day was <strong>'. round(((time()-$funds->visuals->swingfishSynth->DayLostLast)/86400),0).' days ago</strong></small>]</p>';
+}
+?></p><a class="btn btn-sm btn-success" href="https://www.enfoid.com/investors/profit-share" target="_blank">More details ..</a>
+</div>
+</div>
 <div class="text-center mt-6">
 <?
 /*
