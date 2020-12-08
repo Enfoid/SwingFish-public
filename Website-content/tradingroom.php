@@ -101,14 +101,21 @@ new Chart(document.getElementById("myChart"), {
     },
     options: {
 		scales: {
+			xAxes: [{
+				gridLines: {
+					display:false
+				}
+				}],
 			yAxes: [{
 				id: 'synthetics',
 				type: 'linear',
 				position: 'left',
+				gridLines: { display:false },
 			}, {
 				id: 'forex',
 				type: 'linear',
 				position: 'left',
+				gridLines: { display:false },
 			}]
 		},
 		title: {
