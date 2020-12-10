@@ -73,8 +73,8 @@ EnFoid will not hesitate to take legal actions, if this simple rules are not res
               <td><a target="_top" href="/vwap-meeseeks">VWAP Meeseeks 2</a></td>
               <td>cTrader Algo</td>
               <td><?php echo get_AppVersion('vwap-meeseeks'); ?></td>
-              <td><a target="_blank" href="<?=(checkDiscordPermission('mate') ? 'https://drive.google.com/file/d/1sFCrWcBdpveMe1soBS2lskyUmIcuDit2/view?usp=sharing' : '#')?>">Download (.algo)</a></td>
-              <td><? if (checkDiscordPermission('mate')){ ?><font color="red"><strong>First-Mates only!!</strong></font><? } ?></td>
+              <td><a target="_blank" href="<?=(checkDiscordPermission($_SESSION['discord']['id'], 'mate') ? 'https://drive.google.com/file/d/1sFCrWcBdpveMe1soBS2lskyUmIcuDit2/view?usp=sharing' : '#')?>">Download (.algo)</a></td>
+              <td><? if (checkDiscordPermission($_SESSION['discord']['id'], 'mate')){ ?><font color="red"><strong>First-Mates only!!</strong></font><? } ?></td>
             </tr>
             <tr>
               <td><a target="_top" href="/stop-syncer">Stop Syncer 2</a></td>
@@ -101,8 +101,8 @@ EnFoid will not hesitate to take legal actions, if this simple rules are not res
               <td><a target="_top" href="/streamdeck-ctrader">StreamDeck Integration</a></td>
               <td>cTrader Algo +Server</td>
               <td><?php echo get_AppVersion('streamdeck'); ?></td>
-              <td><a target="_blank" href="<?=(checkDiscordPermission('mate') ? 'https://drive.google.com/open?id=1KBViCOX_LqryiOjHYBnbEqREVTtlieZA' : '#')?>">Algo</a> | <a target="_blank" href="<?=(checkDiscordPermission('mate') ? 'https://drive.google.com/open?id=1c-zYngrpUvLLqwyee887yqFHpnIHTCpE' : '#')?>">Server (.exe)</a></td>
-              <td><? if (checkDiscordPermission('mate')){ ?><font color="red"><strong>First-Mates only!!</strong></font><? } ?></td>
+              <td><a target="_blank" href="<?=(checkDiscordPermission($_SESSION['discord']['id'], 'mate') ? 'https://drive.google.com/open?id=1KBViCOX_LqryiOjHYBnbEqREVTtlieZA' : '#')?>">Algo</a> | <a target="_blank" href="<?=(checkDiscordPermission($_SESSION['discord']['id'], 'mate') ? 'https://drive.google.com/open?id=1c-zYngrpUvLLqwyee887yqFHpnIHTCpE' : '#')?>">Server (.exe)</a></td>
+              <td><? if (checkDiscordPermission($_SESSION['discord']['id'], 'mate')){ ?><font color="red"><strong>First-Mates only!!</strong></font><? } ?></td>
             </tr>
           </tbody>
         </table>
