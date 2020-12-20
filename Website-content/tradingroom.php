@@ -185,7 +185,7 @@ else {?>
 if ($funds->visuals->swingfishSynth->Profitfactor > 0.8) { ?><p>Profit Factor <?=round($funds->visuals->swingfishSynth->Profitfactor,2)?> &amp; <?=round($funds->visuals->swingfishSynth->Sharperatio,2)?> Sharpe Ratio</p>
 <? }
 if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->DaysWon) == 0) {
-	echo '<p align="right">[<small>Last losing day was <strong>'. round(((time()-$funds->visuals->swingfishSynth->DayLostLast)/86400),0).' days ago</strong></small>]</p>';
+//	echo '<p align="right">[<small>Last losing day was <strong>'. round(((time()-$funds->visuals->swingfishSynth->DayLostLast)/86400),0).' days ago</strong></small>]</p>';
 }
 ?></p><a class="btn btn-sm btn-success" href="https://www.enfoid.com/investors/profit-share" target="_blank">More details ..</a>
 </div>
