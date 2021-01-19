@@ -24,7 +24,7 @@ $funds = json_decode(file_get_contents('http://www.enfoid.com/api/c/fundstats.js
 //    $wp_totals = json_decode(unserialize(file_get_contents(URI.'tmp/wp_totals')));
 //	$wp_totals = $wp_totals[1];
 
-$wpr = json_decode(file_get_contents('/lib/3rd/wordpress/site_lastpost.php'), true)[0];
+$wpr = json_decode(file_get_contents(URL.'lib/3rd/wordpress/site_lastpost.php'), true)[0];
    ?>
    <section class="container padding-top-3x padding-bottom">
       <h2 class="block-title text-center swingfish">
