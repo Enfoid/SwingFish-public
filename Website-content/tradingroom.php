@@ -3,8 +3,6 @@ $funds = json_decode(file_get_contents('http://enfoid.com/api/c/fundstats.json')
 include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 if ((get_YoutubeLive()['live'] == 'true')) {
 	$rcounts = unserialize(file_get_contents(URI."tmp/restream_stats"));
-
-// print_r($rcounts['stats']);
 }
 ?><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 <section class="container">
@@ -148,9 +146,6 @@ if (($funds->visuals->swingfish1000->lookback-$funds->visuals->swingfish1000->Da
 }
 else {?>
 	<p><?=$funds->visuals->swingfish1000->DaysWon?> Profitable day<? if ($funds->visuals->swingfish1000->DaysWon>1 || $funds->visuals->swingfish1000->DaysWon == 0) { echo "s"; }?> vs. <?=$funds->visuals->swingfish1000->DaysLost?> Losing day<? if ($funds->visuals->swingfish1000->DaysLost>1 || $funds->visuals->swingfish1000->DaysLost == 0) { echo "s"; } }?></p>
-
-
-
 <?
 if ($funds->visuals->swingfish1000->Profitfactor > 0.8) { ?><p>Profit Factor <?=round($funds->visuals->swingfish1000->Profitfactor,2)?> &amp; <?=round($funds->visuals->swingfish1000->Sharperatio,2)?> Sharpe Ratio</p>
 <? }
