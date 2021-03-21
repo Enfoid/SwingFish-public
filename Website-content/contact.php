@@ -8,7 +8,7 @@ $_SESSION['captcha'] = rand(3, 7).rand(2, 5);
 				<div class="col-md-6">
 					<h2>Contact</h2>   
 
-<iframe height="600" frameBorder="0" border="0" width="100%" src="https://chat.enfoid.com/chat/1bjksc2lo"></iframe>
+<iframe height="600" frameBorder="0" border="0" height="550" width="100%" src="https://chat.enfoid.com/chat/1bjksc2lo"></iframe>
 				</div>
 				<div class="col-md-6">
 					<h2><a style="float:right;" class="btn btn-danger btn-sm" href="https://www.enfoid.com/contact" target="_blank">Business Contacts</a></h2>   
