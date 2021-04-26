@@ -24,3 +24,4 @@ Changes:
  - added margin warning level (shows a different icon when level is crossed)
  - only shows "today" when no position is open
     
+P.S. there is also a MT5 Version avaiable
