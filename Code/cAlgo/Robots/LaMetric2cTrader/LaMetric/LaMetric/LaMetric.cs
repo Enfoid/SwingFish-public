@@ -79,23 +79,28 @@ namespace cAlgo.Robots
             }
 
 
+            ServicePointManager.Expect100Continue = false;
+            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(delegate { return true; });
 
-        UpdateLaMetric();
-        Timer.Start(TimeSpan.FromMilliseconds((TimerDelay*1000)));
- 
- }
+            UpdateLaMetric();
+
+            Timer.Start(TimeSpan.FromMilliseconds((TimerDelay*1000)));
+        }
 
         protected override void OnTick()
+        {
+ //            UpdateLaMetric();
+        }
+
+        protected override void OnTimer()
         {
              UpdateLaMetric();
         }
 
         protected void UpdateLaMetric()
         {
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(delegate { return true; });
 
- // ctrader logo 7463
+            // ctrader logo 7463
 
             
             double PnLEquity =0;
@@ -232,8 +237,6 @@ namespace cAlgo.Robots
         private bool _stop;
         protected void OnStop()
         {
-            ServicePointManager.Expect100Continue = false;
-            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(delegate { return true; });
 
             var frames = new[] 
             {

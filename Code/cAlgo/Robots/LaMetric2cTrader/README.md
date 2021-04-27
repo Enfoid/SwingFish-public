@@ -22,6 +22,8 @@ ToDo:
  - better app integration (getting auth to work can be "tricky" for some peoples)
 
 Changes:
+ - actually use the timer (not OnTick)
+ - minor fixes)
  - choice to calculate TodaysPnL based on Balance or Equity
  - Better communication
  - fixed icon issue
