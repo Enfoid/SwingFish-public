@@ -1,9 +1,0 @@
-obj
-bin
-pkg
-.nu
-_ReSharper.*
-*.user
-*.suo
-*.log
-.DS_Store
