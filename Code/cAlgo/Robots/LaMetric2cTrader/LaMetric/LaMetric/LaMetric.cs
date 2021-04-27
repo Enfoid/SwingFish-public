@@ -63,6 +63,9 @@ namespace cAlgo.Robots
         [Parameter("Day Start Balance", Group = "cTrader", DefaultValue = 0)]
         public double DayStart { get; set; }
 
+        [Parameter("Running Profit by Equity", Group = "cTrader", DefaultValue = true)]
+        public bool RunningEquityProfit { get; set; }
+
         [Parameter("Margin Warning Level", Group = "cTrader", DefaultValue = 3000)]
         public int MarginWarning { get; set; }
 
@@ -95,7 +98,13 @@ namespace cAlgo.Robots
  // ctrader logo 7463
 
             
-            double PnLEquity = Math.Round(Account.Equity / DayStart * 100 - 100,3);
+            double PnLEquity =0;
+            if (RunningEquityProfit){
+                PnLEquity = Math.Round(Account.Equity / DayStart * 100 - 100,3);
+            }
+            else {
+                PnLEquity = Math.Round(Account.Balance / DayStart * 100 - 100,3);
+            }
             
             var PnLText = Math.Round(PnLEquity, (PnLEquity >10 ? 2:3)) + "%";
             int PnLIcon = 20953;
@@ -153,7 +162,7 @@ namespace cAlgo.Robots
                     },
                     new Frame 
                     {
-                        text = "Current PnL",
+                        text = "PnL",
                         icon = 35196,
                         index = 1
                     },

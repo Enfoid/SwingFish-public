@@ -1,4 +1,4 @@
-0.21
+0.22
 LaMetric Time Integration for cTrader
 
 allows the cTrader to show Account & Position informations on the LaMetric Time
@@ -22,6 +22,7 @@ ToDo:
  - better app integration (getting auth to work can be "tricky" for some peoples)
 
 Changes:
+ - choice to calculate TodaysPnL based on Balance or Equity
  - Better communication
  - fixed icon issue
  - added margin warning level (shows a different icon when level is crossed)
