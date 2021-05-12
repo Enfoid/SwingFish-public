@@ -21,6 +21,7 @@ $BookCountFile = CACHE.'aws_bookcount';
 					<h3 class="widget-title"><i class="icon-ribbon"></i> Member Center</h3>
 					<ul>
 						<li><a href="/members">Insider</a></li>
+						<li><a href="/blog/wp-admin/post-new.php">Write Blog Post</a></li>
 						<? if (checkDiscordPermission(hasDiscord(),'mod')){ echo '<li><a href="/members/cabincrew" style="border: 1px solid #4286f4;">for Cabincrew</a></li>'; } ?>
 						<li><a href="/members/prop">Free Forex Funding<span>+50k</span></a></li>
 						<li><a href="/members/downloads">Downloads</a></li>
