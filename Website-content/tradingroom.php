@@ -1,9 +1,11 @@
 <?
 $funds = json_decode(file_get_contents('http://enfoid.com/api/c/fundstats.json'));	
 include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
-if ((get_YoutubeLive()['live'] == 'true')) {
+/*
+	if ((get_YoutubeLive()['live'] == 'true')) {
 	$rcounts = unserialize(file_get_contents(URI."tmp/restream_stats"));
 }
+*/
 ?><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 <section class="container">
 	<div class="row padding-top">
