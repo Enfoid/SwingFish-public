@@ -26,8 +26,8 @@
 				<div class="owl-wrapper-outer">
 					<div class="owl-wrapper" style="width: 3330px; left: 0px; display: block;">
 						<div class="owl-item" style="width: 555px;"><div class="overlay-container margin-top-clear">
-							<img src="<?=URL?>lib/3rd/xscalp/getchart.php?do=cs4" alt="">
-							<a href="<?=URL?>lib/3rd/xscalp/getchart.php?do=cs4&dm=<?php echo time();?>" class="popup-img overlay" title="Realtime Market data is provided with permission by xscalp.com"><i class="fa fa-search-plus"></i></a>
+							<img src="http://64.31.23.246/data/cs-36hoursdiverge.png?n=1624939818005" alt="">
+							<a href="http://64.31.23.246/data/cs-36hoursdiverge.png?n=1624939818005&dm=<?php echo time();?>" class="popup-img overlay" title="Realtime Market data is provided with permission by xscalp.com"><i class="fa fa-search-plus"></i></a>
 							<ul class="list-icons">
 								<li class="object-non-visible animated object-visible fadeInUpSmall" data-animation-effect="fadeInUpSmall" data-effect-delay="900"><i class="icon-link"></i> Realtime Market data is provided with permission by <a href="http://xscalp.com" target="_blank">xscalp.com</a></li>
 								<li class="object-non-visible animated object-visible fadeInUpSmall" data-animation-effect="fadeInUpSmall" data-effect-delay="900"><i class="icon-graduation-cap"></i><a href="/blog/?p=1255">Blog post about how to use this in the Real World</a></li>
