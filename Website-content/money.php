@@ -55,8 +55,8 @@ $funds = json_decode(file_get_contents('http://www.enfoid.com/api/a/enfoid/funds
                 <li>Spread <strong>~ 0.3 - 0.5 pips</strong></li>
               </ul>
 				<div class="counter" data-duration="2700">
-					<div class="digits"><?=round($funds->stats->iblink->w*2.9,0)?></div>
-					<font size="0.8em">Broker Rebates Paid back this week</font>
+					<div class="digits"><?=round($funds->stats->iblink->m*2.9,0)?></div>
+					<font size="0.8em">Broker Rebates Paid back this month</font>
 				</div>
             </div>
           </div>
