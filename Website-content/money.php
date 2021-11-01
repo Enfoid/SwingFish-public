@@ -89,18 +89,18 @@ $funds = json_decode(file_get_contents('http://www.enfoid.com/api/a/enfoid/funds
                 <div class="pricing-icon">
                   <img src="/blog/wp-content/uploads/2017/12/enfoid-lenders-logo.png" style="height:37;" height="37" alt="EnFoid">
                 </div>
-                <h3 class="pricing-title">EnFoid Lenders</h3>
-                <p>Lending Based with Guaranteed Gains</p>
-                <a href="https://www.enfoid.com/investors" target="_blank" class="btn btn-default btn-icon-right waves-effect waves-light">more details<i class="icon-arrow-right"></i></a>
+                <h3 class="pricing-title">SwingFish Profit Share</h3>
+                <p>get the same returns as shown in <a href="/tradingroom">Trading room</a></p>
+                <a href="https://www.enfoid.com/investors/profit-share" target="_blank" class="btn btn-default btn-icon-right waves-effect waves-light">more details<i class="icon-arrow-right"></i></a>
               </div>
               <ul>
-                <li>No Minimum required</li>
-                <li>Interest <strong>9.55%</strong> <small>p.a.</small> (Guaranteed)</li>
-                <li>Dividends up to <strong>0.35%</strong> <small>weekly</small></li>
+                <li>10k Minimum</li>
+                <li>Interest on Profits</li>
+                <li>6, 12 and 18 Month plans <small>Monthly Payout</small></li>
               </ul>
           <div class="counter" data-duration="1500">
-            <div class="digits"><?=round($funds->stats->paid->m*2.9,0)?></div>
-            <font size="0.8em">Interests Paid this week</font>
+            <div class="digits"><?=round($funds->stats->paid->m*7.2,0)?></div>
+            <font size="0.8em">Paid last month</font>
           </div>
             </div>
           </div>
