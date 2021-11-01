@@ -90,7 +90,7 @@ $funds = json_decode(file_get_contents('http://www.enfoid.com/api/a/enfoid/funds
                   <img src="/blog/wp-content/uploads/2017/12/enfoid-lenders-logo.png" style="height:37;" height="37" alt="EnFoid">
                 </div>
                 <h3 class="pricing-title">SwingFish Profit Share</h3>
-                <p>get the same returns as shown in <a href="/tradingroom">Trading room</a></p>
+                <p>same returns as shown in <a href="/tradingroom">Trading room</a></p>
                 <a href="https://www.enfoid.com/investors/profit-share" target="_blank" class="btn btn-default btn-icon-right waves-effect waves-light">more details<i class="icon-arrow-right"></i></a>
               </div>
               <ul>
@@ -99,7 +99,7 @@ $funds = json_decode(file_get_contents('http://www.enfoid.com/api/a/enfoid/funds
                 <li>6, 12 and 18 Month plans <small>Monthly Payout</small></li>
               </ul>
           <div class="counter" data-duration="1500">
-            <div class="digits"><?=round($funds->stats->paid->m*7.2,0)?></div>
+            <div class="digits"><?=round($funds->stats->paid->m*7.9,0)?></div>
             <font size="0.8em">Paid last month</font>
           </div>
             </div>
