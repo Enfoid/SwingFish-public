@@ -204,11 +204,16 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
             <div class="post-body">
               <div class="post-meta">
                 <div class="column">
-			<ul class="nav-tabs" role="tablist">
+			<ul class="nav-tabs" role="tablist"><?
+				/*
 				<li<? if (get_YoutubeLive()['live'] == 'true') { echo '  class="active"'; }?>><a href="#live" role="tab" data-toggle="tab">Livestream</a></li>
 				<li<? if ((get_YoutubeLive()['live'] != 'true')&&(get_wp_draft()['hasdraft'] == "1")) { echo '  class="active"'; }?>><a href="#webcam" role="tab" data-toggle="tab">Webcam</a></li>
 				<li<? if ((get_YoutubeLive()['live'] != 'true')&&(get_wp_draft()['hasdraft'] != "1")) { echo '  class="active"'; }?>><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
-				<li><a role="tab" href="/chat"><font color="green">Join the Chat!</font></a></li>
+*/
+				?><li<? if (get_wp_draft()['hasdraft'] == "1") { echo '  class="active"'; }?>><a href="#live" role="tab" data-toggle="tab">Livestream</a></li>
+				<li><a href="#webcam" role="tab" data-toggle="tab">Webcam</a></li>
+				<li<? if (get_wp_draft()['hasdraft'] != "1") { echo '  class="active"'; }?>><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
+<li><a role="tab" href="/chat"><font color="green">Join the Chat!</font></a></li>
 			</ul><!-- .nav-tabs -->
                 </div>
               </div><!-- .post-meta -->
