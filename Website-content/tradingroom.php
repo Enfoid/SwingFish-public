@@ -268,7 +268,7 @@ echo '<a name="draft">.</a><section class="container">
 		<div class="main col-md-12">';
 
 							echo '<div class="row padding-top"><hr />';
-							readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=body');
+						//	readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=body');
 							echo '</div>';
 echo '		</div>
 	</div>
