@@ -45,16 +45,7 @@ include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 	}	
 	else {
 		?><h4><center>Live trading Session completed</center></h4>
-		<center>we usually trade Asia Session, but not all day, we got lives too :)</center><?
-/*
-		<br />
-		<ul class="nav-tabs" role="tablist">
-			<li><a href="/chat">Join the Chat</a></li>
-			<li><a href="/journal">Trading Logs</a></li>
-			<li><a href="/youtube">Video Archive</a></li>
-		</ul><!-- .nav-tabs -->
-*/
-?><? } ?>            
+		<center>we usually trade Asia Session, but not all day, we got lives too :)</center><? } ?>            
 					</div>
 				</article>
 				<? if ((get_YoutubeLive()['live'] != 'true') && (get_wp_draft()['hasdraft'] != "1")) {?>
@@ -204,13 +195,8 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
             <div class="post-body">
               <div class="post-meta">
                 <div class="column">
-			<ul class="nav-tabs" role="tablist"><?
-				/*
-				<li<? if (get_YoutubeLive()['live'] == 'true') { echo '  class="active"'; }?>><a href="#live" role="tab" data-toggle="tab">Livestream</a></li>
-				<li<? if ((get_YoutubeLive()['live'] != 'true')&&(get_wp_draft()['hasdraft'] == "1")) { echo '  class="active"'; }?>><a href="#webcam" role="tab" data-toggle="tab">Webcam</a></li>
-				<li<? if ((get_YoutubeLive()['live'] != 'true')&&(get_wp_draft()['hasdraft'] != "1")) { echo '  class="active"'; }?>><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
-*/
-				?><li<? if (get_wp_draft()['hasdraft'] == "1") { echo '  class="active"'; }?>><a href="#live" role="tab" data-toggle="tab">Livestream</a></li>
+			<ul class="nav-tabs" role="tablist">
+				<li<? if (get_wp_draft()['hasdraft'] == "1") { echo '  class="active"'; }?>><a href="#live" role="tab" data-toggle="tab">Livestream</a></li>
 				<li><a href="#webcam" role="tab" data-toggle="tab">Webcam</a></li>
 				<li<? if (get_wp_draft()['hasdraft'] != "1") { echo '  class="active"'; }?>><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
 <li><a role="tab" href="/chat"><font color="green">Join the Chat!</font></a></li>
@@ -242,7 +228,7 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
 						<li><img id="cbe1D19a" src="/assets/images/swingfish/square_50.png" style="width:28px; height:28px; float:left;"><span class="badge" id="cbe1D19n">...</span> <span id="cbe1D19b"></span></li>
 					</ul>
 				</div>
-				<div role="tabpanel" class="tab-pane transition fade<? if (get_YoutubeLive()['live'] == 'true') { echo ' in active'; }?>" id="live">
+				<div role="tabpanel" class="tab-pane transition fade<? if (get_wp_draft()['hasdraft'] == 1) { echo ' in active'; }?>" id="live">
 					<div class="embed-responsive embed-responsive-16by9">
 <?
 /*
@@ -254,7 +240,7 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
 						<p><a href="/live">check out the live page for more details</a>.</p>
 					</div>
 				</div>
-				<div role="tabpanel" class="tab-pane transition fade<? if ((get_YoutubeLive()['live'] != 'true')&&(get_wp_draft()['hasdraft'] == "1")) { echo ' in active'; }?>" id="webcam">
+				<div role="tabpanel" class="tab-pane transition fade" id="webcam">
 					<div class="overlay-container">
 						<img src="https://swingfish.trade/lib/ajax/cam261.php" id="webcama" alt="Trading Room Webcam">
 					</div>
