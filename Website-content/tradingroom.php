@@ -27,13 +27,13 @@ include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 	if ((get_wp_draft()['hasdraft'] == "1")&&((get_YoutubeLive()['live'] != 'true'))) {
 		echo '<h4><center><font color="red">in Session...</font></center></h4>';
 		readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=header');
-		echo '<a class="btn btn-sm btn-success" href="/journal">click here for ongoing Activity log</a>';
+		echo '<a class="btn btn-lg btn-success" href="/journal">Click here for Activity log as it happens</a>';
 	}
 	elseif ((get_YoutubeLive()['live'] == 'true')) {
 		echo '<h4><font color="green">Livestream active</font></h4><p><a href="/live">'.get_YoutubeLive()['title'].'</a></p>';
 		if ((get_wp_draft()['hasdraft'] == "1")) {
 			readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=header');
-			echo '<a class="btn btn-sm btn-success" href="/journal">Click here for ongoing Activity Log</a>';
+			echo '<a class="btn btn-lg btn-success" href="/journal">Click here for Activity log as it happens</a>';
 			} else {
 				echo '<br /><i>No Trade Log found!</i><br />that could have serval reasons, like<br /><i>done trading already, Stream may be not trade related,<br />or we just showing some market activities</i>.<hr /><ul class="nav-tabs" role="tablist">
 			<li><a href="/chat">Join the Chat</a></li>
