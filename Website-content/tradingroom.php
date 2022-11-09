@@ -27,13 +27,13 @@ include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 	if ((get_wp_draft()['hasdraft'] == "1")&&((get_YoutubeLive()['live'] != 'true'))) {
 		echo '<h4><center><font color="red">in Session...</font></center></h4>';
 		readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=header');
-		echo '<a class="btn btn-lg btn-success" href="/journal">Click here for Activity log as it happens</a>';
+		echo '<br /><a class="btn btn-lg btn-success" href="/journal">Click here for Full Activity log as it happens</a>';
 	}
 	elseif ((get_YoutubeLive()['live'] == 'true')) {
 		echo '<h4><font color="green">Livestream active</font></h4><p><a href="/live">'.get_YoutubeLive()['title'].'</a></p>';
 		if ((get_wp_draft()['hasdraft'] == "1")) {
 			readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=header');
-			echo '<a class="btn btn-lg btn-success" href="/journal">Click here for Activity log as it happens</a>';
+		echo '<br /><a class="btn btn-lg btn-success" href="/journal">Click here for Full Activity log as it happens</a>';
 			} else {
 				echo '<br /><i>No Trade Log found!</i><br />that could have serval reasons, like<br /><i>done trading already, Stream may be not trade related,<br />or we just showing some market activities</i>.<hr /><ul class="nav-tabs" role="tablist">
 			<li><a href="/chat">Join the Chat</a></li>
@@ -249,18 +249,22 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
             </div><!-- .post-body -->
           </article><!-- .post-item -->
         </div><!-- .grid-item -->
-      </div><!-- .grid.isotope-grid.col-2 -->
-    </section><!-- .container -->
 
 <?php
 						if (get_wp_draft()['hasdraft'] == "1") {
-echo '<a name="draft">.</a><section class="container">
-	<div class="row padding-top">
-		<div class="main col-md-12">';
+//echo '<a name="draft">.</a><div class="main col-md-12">';
+//echo '<div class="post-body">';
+?>
+		<div class="col-sm-12">
+			<div class="grid-item">
+				<article class="post-item">
+					<div class="col-sm-12" style="width:100%;padding-top:10px;border: 2px solid #1bdb68; margin: 0 auto 30px auto;">
 
-							echo '<div class="row padding-top"><hr />';
-						//	readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=body');
+<?							
+//							echo '<div class="row padding-top">';
+							readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=body');
 							echo '</div>';
+echo '      </div><!-- .grid.isotope-grid.col-2 -->';
 echo '		</div>
 	</div>
 </section>';
