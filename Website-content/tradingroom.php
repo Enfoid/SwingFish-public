@@ -264,8 +264,8 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
 //							echo '<div class="row padding-top">';
 							readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=body');
 							echo '</div>';
+						}
 echo '      </div><!-- .grid.isotope-grid.col-2 -->';
 echo '		</div>
 	</div>
 </section>';
-						}
