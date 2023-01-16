@@ -75,46 +75,50 @@ new Chart(document.getElementById("myChart"), {
       datasets: [{
           label: "FOREX",
           type: "line",
-		  yAxisID: 'forex',
+                  yAxisID: 'forex',
           borderColor: "#8e5ea2",
           data: [<?=substr($funds->visuals->swingfish1000->chartgain, 9)?>,
           fill: true
         },
-{
+<?
+/*      {
           label: "SYNTHETICS",
           type: "line",
-		  yAxisID: 'synthetics',
+                  yAxisID: 'synthetics',
           borderColor: "#62b7ff",
           data: [<?=substr($funds->visuals->swingfishSynth->chartgain, 9)?>,
           fill: false
         }
-      ]
+  */
+?>    ]
     },
     options: {
-		scales: {
-			xAxes: [{
-				gridLines: {
-					display:false
-				}
-				}],
-			yAxes: [{
-				id: 'synthetics',
-				type: 'linear',
-				position: 'left',
-				gridLines: { display:false },
-			}, {
-				id: 'forex',
-				type: 'linear',
-				position: 'left',
-				gridLines: { display:false },
-			}]
-		},
-		title: {
-			display: true,
-			text: 'Last <?=$funds->visuals->swingfish1000->lookback?> Trading days (Daytrades only)'
-		},
-		legend: { display: true }
-	}
+                scales: {
+                        xAxes: [{
+                                gridLines: {
+                                        display:false
+                                }
+                                }],
+                        yAxes: [<?
+/*{
+                                id: 'synthetics',
+                                type: 'linear',
+                                position: 'left',
+                                gridLines: { display:false },
+                        }, */
+?>{
+                                id: 'forex',
+                                type: 'linear',
+                                position: 'left',
+                                gridLines: { display:true },
+                        }]
+                },
+                title: {
+                        display: true,
+                        text: 'Last <?=$funds->visuals->swingfish1000->lookback?> Trading days (Daytrades only)'
+                },
+                legend: { display: true }
+        }
 });</script>			<ul class="nav-tabs" role="tablist">
 				<li><a href="#ResultsForex" role="tab" data-toggle="tab">Forex</a></li>
 				<li><a href="#ResultsSynthetics" role="tab" data-toggle="tab">Synthetics</a></li>
