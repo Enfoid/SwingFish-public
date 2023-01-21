@@ -1,6 +1,7 @@
 <?
 $funds = json_decode(file_get_contents('http://enfoid.com/api/c/fundstats.json'));	
 include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
+
 /*
 	if ((get_YoutubeLive()['live'] == 'true')) {
 	$rcounts = unserialize(file_get_contents(URI."tmp/restream_stats"));
@@ -26,6 +27,7 @@ include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 <?php
 	if ((get_wp_draft()['hasdraft'] == "1")&&((get_YoutubeLive()['live'] != 'true'))) {
 		echo '<h4><center><font color="red">in Session...</font></center></h4>';
+		echo '<pre class="liveposition"></pre><hr />';
 		readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=header');
 		echo '<br /><a class="btn btn-lg btn-success" href="/journal">'.strip_tags(file_get_contents('https://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?justtitle=true')).'</a>';
 	}
@@ -45,7 +47,8 @@ include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 	}	
 	else {
 		?><h4><center>Live trading Session completed</center></h4>
-		<center>we usually trade Asia Session, but not all day, we got lives too :)</center><? } ?>            
+		<? if ($pos0) { ?>Platform status<pre class="liveposition"><?=$pos0?></pre><? } else {?>
+		<center>we usually trade Asia Session, but not all day, we got lives too :)</center><?} } ?>            
 					</div>
 				</article>
 				<? if ((get_YoutubeLive()['live'] != 'true') && (get_wp_draft()['hasdraft'] != "1")) {?>
