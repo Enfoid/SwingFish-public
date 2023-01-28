@@ -31,14 +31,14 @@ EnFoid will not hesitate to take legal actions, if this simple rules are not res
               <td><a target="_top" href="/swingfish-intra">SwingFish Intra</a></td>
               <td>cTrader Indicator</td>
               <td><?php echo get_AppVersion('swingfish-intra'); ?></td>
-              <td><a target="_blank" href="https://drive.google.com/open?id=16snQO4EZRz8mZWRIsDE8emLoRvssQyTT">Download (.algo)</a></td>
+              <td><a target="_blank" href="https://ko-fi.com/s/80e0f8e83c">Download (.algo)</a></td>
               <td></td>
             </tr>
             <tr>
               <td><a target="_top" href="/vwap-forex">Forex vWap</a></td>
               <td>cTrader Indicator</td>
               <td><?php echo get_AppVersion('swingfish-vwap-nodev'); ?></td>
-              <td><a target="_blank" href="https://drive.google.com/open?id=1YFBivYaRMZJ-yW_JdXHcrdgLeukNrgZg">Download (.algo)</a></td>
+              <td><a target="_blank" href="https://ko-fi.com/s/3dfcdddfc4">Download (.algo)</a></td>
               <td></td>
             </tr>
             <tr>
@@ -52,7 +52,7 @@ EnFoid will not hesitate to take legal actions, if this simple rules are not res
               <td><a target="_top" href="/swingfish-helper">SwingFish Helper</a></td>
               <td>cTrader Algo +Sounds</td>
               <td><?php echo get_AppVersion('swingfish-helper'); ?></td>
-              <td><a target="_blank" href="https://drive.google.com/file/d/1V7pmd-rAkE824EOkZ6HFs1zxIZ4vLKJ5/view">Download (.exe)</a></td>
+              <td><a target="_blank" href="https://ko-fi.com/s/c74d68c7b9">Download (.exe)</a></td>
               <td>(for first install)</td>
             </tr>
             <tr>
