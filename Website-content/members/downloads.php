@@ -45,7 +45,7 @@ EnFoid will not hesitate to take legal actions, if this simple rules are not res
               <td><a target="_top" href="/vwap-forex">Forex vWap alert</a></td>
               <td>cTrader Indicator</td>
               <td>0.0</td>
-              <td><a target="_blank" href="https://drive.google.com/open?id=1X-QVawNQ-halUPDoUZ2DZ2lWEjrlDF4K">Download (.algo)</a></td>
+              <td><a target="_blank" href="https://ko-fi.com/s/417c2359f4">Download (.algo)</a></td>
               <td></td>
             </tr>
             <tr>
@@ -80,11 +80,11 @@ EnFoid will not hesitate to take legal actions, if this simple rules are not res
               <td><a target="_top" href="/stop-syncer">Stop Syncer 2</a></td>
               <td>cTrader Algo</td>
               <td><?php echo get_AppVersion('stop-syncer'); ?></td>
-              <td><a target="_blank" href="https://drive.google.com/file/d/1LFWt3s81QT4G-XhbOFC0cRGNd5kfeOh6/view">Download (.algo)</a></td>
+              <td><a target="_blank" href="https://ko-fi.com/s/8991d4beca">Download (.algo)</a></td>
               <td></td>
             </tr>
             <tr>
-              <td><a target="_top" href="/stop-syncer">Stop Syncer</a></td>
+              <td><a target="_top" href="/stop-syncer">Stop Syncer (old version)</a></td>
               <td>cTrader Script</td>
               <td>0.14</td>
               <td><a target="_blank" href="https://drive.google.com/open?id=1TuQmg1NVQ2ZQwswgkl4lgzdAOxE_njyr">Download (.algo)</a></td>
@@ -101,7 +101,7 @@ EnFoid will not hesitate to take legal actions, if this simple rules are not res
               <td><a target="_top" href="/streamdeck-ctrader">StreamDeck Integration</a></td>
               <td>cTrader Algo +Server</td>
               <td><?php echo get_AppVersion('streamdeck'); ?></td>
-              <td><a target="_blank" href="<?=(checkDiscordPermission($_SESSION['discord']['id'], 'mate') ? 'https://drive.google.com/open?id=1KBViCOX_LqryiOjHYBnbEqREVTtlieZA' : '#')?>">Algo</a> | <a target="_blank" href="<?=(checkDiscordPermission($_SESSION['discord']['id'], 'mate') ? 'https://drive.google.com/open?id=1c-zYngrpUvLLqwyee887yqFHpnIHTCpE' : '#')?>">Server (.exe)</a></td>
+              <td><a target="_blank" href="<?=(checkDiscordPermission($_SESSION['discord']['id'], 'mate') ? 'https://ko-fi.com/s/e3417fe09f' : '#')?>">Algo</a> | <a target="_blank" href="<?=(checkDiscordPermission($_SESSION['discord']['id'], 'mate') ? 'https://drive.google.com/open?id=1c-zYngrpUvLLqwyee887yqFHpnIHTCpE' : '#')?>">Server (.exe)</a></td>
               <td><? if (!checkDiscordPermission($_SESSION['discord']['id'], 'mate')){ ?><font color="red"><strong>First-Mates only!!</strong></font><? } ?></td>
             </tr>
           </tbody>
