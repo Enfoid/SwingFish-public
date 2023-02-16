@@ -93,7 +93,7 @@
               <td class="text-gray text-right">Options</td>
               <td class="text-bold"></td>
               <td class="text-bold">1 Min delay<br />&#163;20-50/Month</td>
-!<--              <td class="text-bold"></td> -->
+<!--              <td class="text-bold"></td> -->
               <td class="text-bold"></td>
               <td class="text-bold">Asia Package + &#163;10<br /><a href="https://zerohedge.talking-forex.com/live.html" target="_blank">Free via zerohedge</a><br />(5 Min delay)</td>
             </tr>
