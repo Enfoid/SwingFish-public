@@ -9,7 +9,7 @@
         <div class="pricing-table space-top">
           <table>
             <colgroup>
-              <col>
+             <col class="featured">
               <col>
               <col>
 <!--              <col class="featured"> -->
@@ -99,7 +99,7 @@
             </tr>
             <tr>
               <td class="text-gray text-right">Cost</td>
-              <td class="text-bold">$55/Month</td>
+              <td class="text-bold">&#163;55/Month</td>
               <td class="text-bold">$150/Month</td>
 <!--              <td class="text-bold text-success">FREE</td> -->
               <td class="text-bold text-success">FREE</td>
