@@ -12,7 +12,7 @@
               <col>
               <col>
               <col>
-              <col class="featured">
+<!--              <col class="featured"> -->
               <col>
               <col>
             </colgroup>
