@@ -1,4 +1,11 @@
-<section class="container">
+<pre><strong>Discord integration has been temporary suspended!</strong>
+
+	this page will later show detailed informations about this, once the change has ben completed.
+</pre><?
+	
+	// page disabled, redirect to Blogpost 293419
+	
+	?><section class="container">
 	<div class="row padding-top">
 		<div class="col-lg-8"><h3 class="swingfish">Free Discord Chat</h3>
 			<span align="left"><a href="/go/chat" target="_blank" class="btn btn-success">Join (it's FREE)</a></span><img src="/assets/images/chat/discord-tradingroom.png" width="160" align="right" class="space-bottom" alt="Image">

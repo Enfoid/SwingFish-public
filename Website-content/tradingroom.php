@@ -27,7 +27,7 @@ include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 <?php
 	if ((get_wp_draft()['hasdraft'] == "1")&&((get_YoutubeLive()['live'] != 'true'))) {
 		echo '<h4><center><font color="red">in Session...</font></center></h4>';
-		echo '<pre class="liveposition"></pre><hr />';
+		echo '<pre class="liveposition" id="livepos2"></pre><hr />';
 		readfile('http://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?part=header');
 		echo '<br /><a class="btn btn-lg btn-success" href="/journal">'.strip_tags(file_get_contents('https://swingfish.trade/lib/3rd/wordpress/Tradelog_draft_content.php?justtitle=true')).'</a>';
 	}
@@ -47,7 +47,7 @@ include_once(URI.'lib/3rd/youtube/youtube-livecheck.php');
 	}	
 	else {
 		?><h4><center>Live trading Session completed</center></h4>
-		<? if ($pos0) { ?>Platform status<pre class="liveposition"><?=$pos0?></pre><? } else {?>
+		<? if ($pos0) { ?>Platform status<pre class="liveposition" id="livepos2"><?=$pos0?></pre><? } else {?>
 		<center>we usually trade Asia Session, but not all day, we got lives too :)</center><?} } ?>            
 					</div>
 				</article>
@@ -202,16 +202,18 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
             <div class="post-body">
               <div class="post-meta">
                 <div class="column">
-			<ul class="nav-tabs" role="tablist">
+<?
+	/*			<ul class="nav-tabs" role="tablist">
 				<li<? if (get_wp_draft()['hasdraft'] == "1") { echo '  class="active"'; }?>><a href="#live" role="tab" data-toggle="tab">Livestream</a></li>
 				<li><a href="#webcam" role="tab" data-toggle="tab">Webcam</a></li>
 				<li<? if (get_wp_draft()['hasdraft'] != "1") { echo '  class="active"'; }?>><a href="#chat" role="tab" data-toggle="tab">Chat</a></li>
 <li><a role="tab" href="/chat"><font color="green">Join the Chat!</font></a></li>
-			</ul><!-- .nav-tabs -->
+	</ul><!-- .nav-tabs -->
                 </div>
               </div><!-- .post-meta -->
 			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane transition fade<? if ((get_YoutubeLive()['live'] != 'true')&&(get_wp_draft()['hasdraft'] != "1")) { echo ' in active'; }?>" id="chat">
+<?
+	/*				<div role="tabpanel" class="tab-pane transition fade<? if ((get_YoutubeLive()['live'] != 'true')&&(get_wp_draft()['hasdraft'] != "1")) { echo ' in active'; }?>" id="chat">
 					<ul class="list-unstyled" align="left">
 						<? if ((get_YoutubeLive()['live'] != 'true') && (get_wp_draft()['hasdraft'] != "1")) {?>
 						<li><img id="cbe1D1a" src="/assets/images/swingfish/square_50.png" style="width:28px; height:28px; float:left;"><span class="badge" id="cbe1D1n">... loading</span> <span id="cbe1D1b"></span></li>
@@ -236,7 +238,8 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
 					</ul>
 				</div>
 				<div role="tabpanel" class="tab-pane transition fade<? if (get_wp_draft()['hasdraft'] == 1) { echo ' in active'; }?>" id="live">
-					<div class="embed-responsive embed-responsive-16by9">
+*/
+?>					<div class="embed-responsive embed-responsive-16by9">
 <?
 /*
 <iframe src="https://embed.restream.io/player/index.html?token=c7cf82d256e24898e73c8cf1db4474c2" width="640" height="396" frameborder="0" allowfullscreen></iframe>
@@ -246,12 +249,15 @@ if (($funds->visuals->swingfishSynth->lookback-$funds->visuals->swingfishSynth->
 <iframe width="1138" height="641" src="https://www.youtube.com/embed/live_stream?channel=UCqEcEGQ0sG89j7ZhOdgFOyg&autoplay=1&rel=0" frameborder="0" allowfullscreen></iframe>
 						<p><a href="/live">check out the live page for more details</a>.</p>
 					</div>
-				</div>
+<?
+	/*				</div>
 				<div role="tabpanel" class="tab-pane transition fade" id="webcam">
-					<div class="overlay-container">
+*/
+if (get_wp_draft()['hasdraft'] != "1") {?>					<hr />
+						<div class="overlay-container">
 						<img src="https://swingfish.trade/lib/ajax/cam261.php" id="webcama" alt="Trading Room Webcam">
 					</div>
-				</div>
+<? } ?>				</div>
 			</div><!-- .tab-content -->
             </div><!-- .post-body -->
           </article><!-- .post-item -->
