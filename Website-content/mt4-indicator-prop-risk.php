@@ -2,11 +2,10 @@
 
 $download= 'https://github.com/Enfoid/SwingFish-CommunityCode/raw/main/mql4/Prop%20Risk%20Calculator/Prop%20Risk.ex4';
 
-$cachefile = "https://raw.githubusercontent.com/Enfoid/SwingFish-CommunityCode/main/mql4/Prop%20Risk%20Calculator/README.md";
-$app = "stop-syncer";
+$readme = "https://raw.githubusercontent.com/Enfoid/SwingFish-CommunityCode/main/mql4/Prop%20Risk%20Calculator/README.md";
+$app = "prop-risk";
 
-/*
-	$now = (int)time();
+$now = (int)time();
 $cachetime = (int)86400; // 86400
 $cachefile = CACHE."/app_".$app.".readme.txt";
 
@@ -33,7 +32,6 @@ else {
 		file_put_contents(CACHE.'/app_'.$app.'.version.txt', trim($version[0]));
 	}
 }
-*/
 ?>    <!-- Page Title -->
     <!--Add modifier class : "pt-fullwidth" to stretch page title and make it occupy 100% of the page width. -->
     <section class="page-title">
@@ -61,14 +59,14 @@ else {
         <div class="col-lg-6 col-md-6 space-bottom-2x">
 <!--			<div class="embed-responsive embed-responsive-16by9"> -->
 			<div>
-                <img height="462" src="https://raw.githubusercontent.com/Enfoid/SwingFish-CommunityCode/main/mql4/Prop%20Risk%20Calculator/prop-risk-indicator-screenshoot.jpg?v=0">
+                <img height="462" src="https://raw.githubusercontent.com/Enfoid/SwingFish-CommunityCode/main/mql4/Prop%20Risk%20Calculator/prop-risk-indicator-screenshoot.jpg?v=<?php echo get_AppVersion($app); ?>">
 			</div>
 		</div><!-- .col-lg-5.col-md-6 -->
         <div class="col-lg-6 col-md-6 space-bottom-2x">
           <div class="shop-meta space-bottom-2x">
              <span>
               <i class="icon-ribbon hidden-md"></i> for MT4 > 608
-              <span class="badge">App Version 0</span>
+              <span class="badge">App Version <?php echo get_AppVersion($app); ?></span>
             </span>
           </div>
 		  <p>Prop Trader Risk Indicator is a very simple Metatrader 4 Indicator,<br />
@@ -161,8 +159,24 @@ else {
 														if the account is in a loss, this setting will be ignored</i>
 													</li>
 
+												</ul><br />
+<b>use example:</b>
+<pre>
+FTMO Challenge	100k
+AccBaseBalance:	100000
+AccBaseLimit:	90000
+RiskSplit:	10
+RiskProfits:	30
 
-												</ul>
+MFF Accelerated	25k
+AccBaseBalance:	25000
+AccBaseLimit:	23750
+RiskSplit:	10
+RiskProfits:	10
+</pre>									  
+
+
+
 											</div>
 											<div class="col-md-6">
 												<p><img align="center" src="https://raw.githubusercontent.com/Enfoid/SwingFish-CommunityCode/main/mql4/Prop%20Risk%20Calculator/prop-position-calculator-settings-screenshoot.png" title="SwingFish Prop Risk Calculator Settings Screenshoot" alt="SwingFish Prop Risk Calculator Settings Screenshoot"></p>
