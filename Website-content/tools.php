@@ -53,6 +53,7 @@
               </h3>
               <ul>
                 <li><a href="/brokers">Brokers</a></li>
+                <li><a href="/mt4-indicator-prop-risk">Prop Trader Risk Indicator</a></li>
               </ul>
             </div>
           </section>
