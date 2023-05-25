@@ -134,6 +134,7 @@ else {
 							  <span class="text-bold">display realtime Risk to be applied on the next position.</span>
 							  <p class="text-gray">Min Equity and base balance used to calculate. in combination with risk parameters for both profits and base equity.
 								  <br>
+								  <img src="https://www.swingfish.trade/blog/wp-content/uploads/2023/05/prop-risk-values.jpg" alt="Swingfish Prop Risk Values">
 								  <a class="btn" href="#settings" role="tab" data-toggle="tab">Usage details</a>
 							  </p>
 					</div>
